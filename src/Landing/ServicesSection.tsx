@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Star, Camera, MapPin, CheckCircle } from "lucide-react";
+import { Star, Camera,  CheckCircle } from "lucide-react";
 import Card from './PlaceCard'
 
 export default function ToursSection() {

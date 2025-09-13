@@ -60,7 +60,6 @@ const PlaceCard: React.FC<PlaceCardProps> = ({
   price,
   type,
   handleOrderPopup,
-  handleBookNow,
   index,
 }) => {
   const [isFavorite, setIsFavorite] = useState<boolean>(false);

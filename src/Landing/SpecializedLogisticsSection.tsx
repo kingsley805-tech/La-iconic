@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { MapPin, Camera, Globe, Heart, Star } from "lucide-react";
+import { MapPin, Camera, Globe, Heart} from "lucide-react";
 import { useState } from "react";
 
 export default function SpecializedToursSection() {
-    const [favorites, setFavorites] = useState(new Set());
+    const [] = useState(new Set());
 
     const tours = [
         { 
@@ -32,15 +32,6 @@ export default function SpecializedToursSection() {
         }
     ];
 
-    const toggleFavorite = (index: unknown) => {
-        const newFavorites = new Set(favorites);
-        if (newFavorites.has(index)) {
-            newFavorites.delete(index);
-        } else {
-            newFavorites.add(index);
-        }
-        setFavorites(newFavorites);
-    };
 
     return (
         <section className="py-20 bg-gray-50">
