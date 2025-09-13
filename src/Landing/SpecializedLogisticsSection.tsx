@@ -45,7 +45,7 @@ export default function SpecializedToursSection() {
                 >
                     <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
                         <span>Extraordinary </span>
-                        <span className="bg-gradient-to-r from-[#FEFE02] to-[#FDF756] bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-[#FEFE02] to-[#FEFE02] bg-clip-text text-transparent">
                             Unforgettable Tours
                         </span>
                     </h2>
@@ -76,7 +76,7 @@ export default function SpecializedToursSection() {
                                 {/* Icon Section */}
                                 <div className="p-8 pb-4 flex justify-center">
                                     <motion.div
-                                        className="w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#FEFE02] to-[#FDF756] shadow-lg"
+                                        className="w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[#FEFE02] to-[#FEFE02] shadow-lg"
                                         animate={{
                                             y: [0, -5, 0],
                                             rotate: [0, 2, -2, 0],

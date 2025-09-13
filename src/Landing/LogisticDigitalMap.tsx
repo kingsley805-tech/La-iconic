@@ -179,7 +179,7 @@ const TourismWorldMap: React.FC = () => {
                   className="absolute h-0.5 opacity-70"
                   style={{
                     ...getRouteStyle(route),
-                    background: 'linear-gradient(90deg, transparent 0%, #FEFE02 20%, #FDF756 80%, transparent 100%)',
+                    background: 'linear-gradient(90deg, transparent 0%, #FEFE02 20%, #FEFE02 80%, transparent 100%)',
                     animation: `flow 3s linear infinite`,
                     animationDelay: `${index * 0.5}s`,
                   }}
@@ -191,17 +191,17 @@ const TourismWorldMap: React.FC = () => {
                 <div
                   key={destination.id}
                   className={`absolute w-3 h-3 rounded-full cursor-pointer pointer-events-auto transition-all duration-300 hover:scale-150 ${
-                    destination.status === 'crowded' ? 'bg-[#FEFE02]' : destination.status === 'restricted' ? 'bg-[#FEFE02]' : 'bg-[#FDF756]'
+                    destination.status === 'crowded' ? 'bg-[#FEFE02]' : destination.status === 'restricted' ? 'bg-[#FEFE02]' : 'bg-[#FEFE02]'
                   }`}
                   style={{
                     left: `${destination.x}%`,
                     top: `${destination.y}%`,
                     background:
                       destination.status === 'open'
-                        ? 'radial-gradient(circle, black 0%, #FDF756 100%)'
+                        ? 'radial-gradient(circle, black 0%, #FEFE02 100%)'
                         : destination.status === 'crowded'
-                        ? 'radial-gradient(circle, #FEFE02 0%, #FDF756 100%)'
-                        : 'radial-gradient(circle, #FEFE02 0%, #FDF756 100%)',
+                        ? 'radial-gradient(circle, #FEFE02 0%, #FEFE02 100%)'
+                        : 'radial-gradient(circle, #FEFE02 0%, #FEFE02 100%)',
                     boxShadow: `0 0 15px rgba(59, 130, 246, 0.8)`,
                     animation: 'pulse 2s infinite',
                   }}

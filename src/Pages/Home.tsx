@@ -94,7 +94,7 @@ export default function Home() {
                   <motion.div
                     className="w-8 h-8 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center text-white font-bold text-lg sm:text-xl"
                     style={{
-                      color: "#FDF756",
+                      color: "#FEFE02",
                       boxShadow:
                         "4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px #FEFE02",
                     }}
@@ -248,7 +248,7 @@ export default function Home() {
                   <motion.div
                     className="w-8 h-8 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center text-white font-bold text-lg sm:text-xl"
                     style={{
-                      color: "#FDF756",
+                      color: "#FEFE02",
                       boxShadow:
                         "4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px #FEFE02",
                     }}
@@ -372,7 +372,7 @@ export default function Home() {
                   <motion.div
                     className="w-8 h-8 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center text-white font-bold text-lg sm:text-xl"
                     style={{
-                      color: "#FDF756",
+                      color: "#FEFE02",
                       boxShadow:
                         "4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px #FEFE02",
                     }}

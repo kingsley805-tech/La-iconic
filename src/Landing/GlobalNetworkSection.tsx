@@ -24,7 +24,7 @@ export default function GlobalNetworkSection() {
    
     <h2 className="text-4xl lg:text-5xl flex flex-col md:flex-row items-center md:space-x-2 font-bold text-gray-800 mb-6 leading-tight">
       <span>Our Unrivaled</span>
-      <span className="block bg-gradient-to-r from-[#FDF756] to-[#FEFE02] bg-clip-text text-transparent">
+      <span className="block bg-gradient-to-r from-[#FEFE02] to-[#FEFE02] bg-clip-text text-transparent">
      Tour Network
       </span>
     </h2>

@@ -34,7 +34,7 @@ export default function TourTestimonialsSection() {
       id="testimonials"
       className="py-20"
       style={{
-        background: "linear-gradient(to right, #FDF756, #FEFE02)",
+        background: "linear-gradient(to right, #FEFE02, #FEFE02)",
       }}
     >
       <div className="max-w-7xl mx-auto px-6">
@@ -48,7 +48,7 @@ export default function TourTestimonialsSection() {
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Voices from Our
-            <span className="block bg-gradient-to-r from-[#FDF756] to-[#FEFE02] bg-clip-text text-white">
+            <span className="block bg-gradient-to-r from-[#FEFE02] to-[#FEFE02] bg-clip-text text-white">
               LA Adventure Tours
             </span>
           </h2>
@@ -111,7 +111,7 @@ export default function TourTestimonialsSection() {
                     <Star
                       key={i}
                       className="w-5 h-5"
-                      style={{ color: "#FDF756", fill: "#FDF756" }}
+                      style={{ color: "#FEFE02", fill: "#FEFE02" }}
                     />
                   ))}
                 </div>

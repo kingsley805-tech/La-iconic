@@ -41,7 +41,7 @@ export default function WhyChooseUsSection() {
           <div className="max-w-3xl text-left">
             <h2 className="text-4xl lg:text-5xl flex flex-col md:flex-row items-center md:space-x-2 font-bold text-black mb-6 leading-tight">
               <span>LA Tours</span>
-              <span className="block bg-gradient-to-r from-[#FDF756] to-[#FEFE02] bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[#FEFE02] to-[#FEFE02] bg-clip-text text-transparent">
                 Experience
               </span>
             </h2>
@@ -100,7 +100,7 @@ export default function WhyChooseUsSection() {
                   className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 mt-1"
                   style={{
                     background:
-                      "linear-gradient(135deg, #FDF756 0%, #FEFE02 100%)",
+                      "linear-gradient(135deg, #FEFE02 0%, #FEFE02 100%)",
                     boxShadow:
                       "4px 4px 8px rgba(0, 0, 0, 0.15), -4px -4px 8px rgba(254, 254, 2, 0.3)",
                   }}

@@ -141,13 +141,13 @@ const PlaceCard: React.FC<PlaceCardProps> = ({
         {/* Price Section */}
         <div className="flex items-center justify-between border-t border-gray-200/60 pt-3 mt-auto">
           <p className="text-sm text-gray-600">Starting from</p>
-          <p className="text-2xl font-bold text-[#FEFE02] drop-shadow-sm">
+          <p className="text-2xl font-bold text-black drop-shadow-sm">
             ${price}
           </p>
         </div>
 
         {/* Book Now Button */}
-        <button className=" bg-gradient-to-r w-20  text-white from-[#FDF756] to-[#FEFE02] hover:from-[#FEFE02] hover:to-[#FDF756]  py-1 rounded-lg font-semibold transition-all duration-300 transform hover:scale-[1.03] hover:shadow-lg border border-[#FEFE02]/30">
+        <button className=" bg-gradient-to-r w-20  text-white from-black to-black hover:from-[#FEFE02] hover:to-[#FEFE02]  py-1 rounded-lg font-semibold transition-all duration-300 transform hover:scale-[1.03] hover:shadow-lg border border-[#FEFE02]/30">
           Book Now
         </button>
       </div>
@@ -196,7 +196,7 @@ const OrderPopup: React.FC<OrderPopupProps> = ({ orderPopup, setOrderPopup, sele
           </div>
           <button
             onClick={() => setOrderPopup(false)}
-            className="w-full bg-gradient-to-r from-[#FDF756] to-[#FEFE02] hover:from-[#FEFE02] hover:to-[#FDF756] text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+            className="w-full bg-gradient-to-r from-[#FEFE02] to-[#FEFE02] hover:from-[#FEFE02] hover:to-[#FEFE02] text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
           >
             Book This Destination
           </button>
@@ -847,7 +847,7 @@ const WorldPlacesShowcase: React.FC = () => {
               <input
                 type="text"
                 placeholder="Search destination..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 dark:bg-slate-800 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FDF756] focus:border-[#FEFE02] shadow-sm hover:shadow-md transition-all duration-300"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 dark:bg-slate-800 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FEFE02] focus:border-[#FEFE02] shadow-sm hover:shadow-md transition-all duration-300"
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}
               />
             </div>
@@ -869,7 +869,7 @@ const WorldPlacesShowcase: React.FC = () => {
             <div className="flex justify-center mt-16 ">
               <button
                 onClick={handleViewMore}
-                className="bg-[#FEFE02] hover:bg-[#FDF756] text-white py-1 px-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+                className="bg-[#FEFE02] hover:bg-[#FEFE02] text-white py-1 px-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
               >
                 View More
               </button>

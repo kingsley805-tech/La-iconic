@@ -51,13 +51,13 @@ export default function AboutSection() {
             <div className="space-y-6">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-800">
                 Why Choose
-                <span className="block bg-gradient-to-r from-[#FDF756] to-[#FEFE02] bg-clip-text text-transparent">
-                  Dasfan Logistics?
+                <span className="block  text-[#FEFE02] bg-clip-text ">
+                  LA Tour?
                 </span> {/* Changed to Dasfan Logistics for clarity */}
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
-                We're not just a logistics company, we're your trusted partner in global trade. 
-                Our commitment to excellence and innovation drives everything we do, providing solutions that empower your business. {/* Enhanced description */}
+                We're not just a Tour company, we're your trusted partner in global trade. 
+                Our commitment to excellence and innovation drives everything we do. {/* Enhanced description */}
               </p>
             </div>
 

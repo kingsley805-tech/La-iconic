@@ -10,7 +10,7 @@ import { Send, User, Mail, Users, MessageCircle } from 'lucide-react';
 import dynamic from "next/dynamic";
 
 const World = dynamic(() => import("../components/ui/globe").then((m) => m.World), {
-  ssr: false,
+  ssr: true,
 });
 export default function ContactSection() {
   
@@ -51,10 +51,10 @@ const globeConfig = {
     showAtmosphere: true,
     atmosphereColor: "#FFFFFF",
     atmosphereAltitude: 0.1,
-    emissive: "#FDF756",
+    emissive: "#FEFE02",
     emissiveIntensity: 0.1,
     shininess: 0.9,
-    polygonColor: "#FDF756",
+    polygonColor: "#FEFE02",
     ambientLight: "#38bdf8",
     directionalLeftLight: "#ffffff",
     directionalTopLight: "#ffffff",
@@ -67,7 +67,7 @@ const globeConfig = {
     autoRotate: true,
     autoRotateSpeed: 0.5,
   };
-  const colors = ["#FDF756", "#FEFE02", "#FEFE02"];
+  const colors = ["#FEFE02", "#FEFE02", "#FEFE02"];
   const sampleArcs = [
     {
       order: 1,
@@ -442,7 +442,7 @@ const globeConfig = {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-            Plan Your <span className="bg-gradient-to-r from-[#FDF756] to-[#FEFE02] bg-clip-text text-transparent">LA Adventure</span>
+            Plan Your <span className="bg-gradient-to-r from-[#FEFE02] to-[#FEFE02] bg-clip-text text-transparent">LA Adventure</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Ready to explore Los Angeles like never before? Reach out to book your tour or ask us anything about your upcoming trip.
@@ -493,7 +493,7 @@ const globeConfig = {
           {/* Decorative Elements */}
           <div 
             className="absolute -top-10 -right-10 w-20 h-20 rounded-full opacity-10"
-            style={{ backgroundColor: '#FDF756' }}
+            style={{ backgroundColor: '#FEFE02' }}
           ></div>
           <div 
             className="absolute -bottom-10 -left-10 w-16 h-16 rounded-full opacity-10"
@@ -523,7 +523,7 @@ const globeConfig = {
                 <div 
                   className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 pointer-events-none"
                   style={{ 
-                    background: `linear-gradient(135deg, #FEFE02 0%, #FDF756 100%)`,
+                    background: `linear-gradient(135deg, #FEFE02 0%, #FEFE02 100%)`,
                     opacity: focusedField === 'name' ? 0.1 : 0 
                   }}
                 ></div>
@@ -546,7 +546,7 @@ const globeConfig = {
                 <div 
                   className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 pointer-events-none"
                   style={{ 
-                    background: `linear-gradient(135deg, #FEFE02 0%, #FDF756 100%)`,
+                    background: `linear-gradient(135deg, #FEFE02 0%, #FEFE02 100%)`,
                     opacity: focusedField === 'email' ? 0.1 : 0 
                   }}
                 ></div>
@@ -570,7 +570,7 @@ const globeConfig = {
                 <div 
                   className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 pointer-events-none"
                   style={{ 
-                    background: `linear-gradient(135deg, #FEFE02 0%, #FDF756 100%)`,
+                    background: `linear-gradient(135deg, #FEFE02 0%, #FEFE02 100%)`,
                     opacity: focusedField === 'guests' ? 0.1 : 0 
                   }}
                 ></div>
@@ -593,7 +593,7 @@ const globeConfig = {
                 <div 
                   className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 pointer-events-none"
                   style={{ 
-                    background: `linear-gradient(135deg, #FEFE02 0%, #FDF756 100%)`,
+                    background: `linear-gradient(135deg, #FEFE02 0%, #FEFE02 100%)`,
                     opacity: focusedField === 'message' ? 0.1 : 0 
                   }}
                 ></div>
@@ -606,7 +606,7 @@ const globeConfig = {
               disabled={isSubmitting}
               className="w-full h-16 rounded-2xl text-black text-lg font-bold transition-all duration-300 transform hover:scale-105 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center group relative overflow-hidden"
               style={{
-                background: `linear-gradient(135deg, #FEFE02 0%, #FDF756 100%)`,
+                background: `linear-gradient(135deg, #FEFE02 0%, #FEFE02 100%)`,
                 boxShadow: '0 8px 25px rgba(254, 254, 2, 0.3)'
               }}
             >
@@ -635,7 +635,7 @@ const globeConfig = {
           <div 
             className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full opacity-30 animate-bounce"
             style={{ 
-              backgroundColor: '#FDF756',
+              backgroundColor: '#FEFE02',
               animationDelay: '0s',
               animationDuration: '3s'
             }}
@@ -651,7 +651,7 @@ const globeConfig = {
           <div 
             className="absolute top-1/2 right-1/4 w-1.5 h-1.5 rounded-full opacity-20 animate-bounce"
             style={{ 
-              backgroundColor: '#FDF756',
+              backgroundColor: '#FEFE02',
               animationDelay: '2s',
               animationDuration: '2.5s'
             }}
