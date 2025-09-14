@@ -51,10 +51,10 @@ const globeConfig = {
     showAtmosphere: true,
     atmosphereColor: "#FFFFFF",
     atmosphereAltitude: 0.1,
-    emissive: "#FEFE02",
+    emissive: "#f5092d",
     emissiveIntensity: 0.1,
     shininess: 0.9,
-    polygonColor: "#FEFE02",
+    polygonColor: "#f5092d",
     ambientLight: "#38bdf8",
     directionalLeftLight: "#ffffff",
     directionalTopLight: "#ffffff",
@@ -67,7 +67,7 @@ const globeConfig = {
     autoRotate: true,
     autoRotateSpeed: 0.5,
   };
-  const colors = ["#FEFE02", "#FEFE02", "#FEFE02"];
+  const colors = ["#f5092d", "#f5092d", "#f5092d"];
   const sampleArcs = [
     {
       order: 1,
@@ -442,7 +442,7 @@ const globeConfig = {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-            Plan Your <span className="bg-gradient-to-r from-[#FEFE02] to-[#FEFE02] bg-clip-text text-transparent">LA Adventure</span>
+            Plan Your <span className="bg-gradient-to-r from-[#f5092d] to-[#f5092d] bg-clip-text text-transparent">LA Adventure</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Ready to explore Los Angeles like never before? Reach out to book your tour or ask us anything about your upcoming trip.
@@ -480,7 +480,7 @@ const globeConfig = {
       </div>
     </div>
   </div>
-<div className="min-h-screen rounded-3xl flex items-center justify-center p-4" style={{ backgroundColor: '#FEFE02' }}>
+<div className="min-h-screen rounded-3xl flex items-center justify-center p-4" style={{ backgroundColor: '#f5092d' }}>
       <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl">
         {/* Form Container */}
         <div 
@@ -493,11 +493,11 @@ const globeConfig = {
           {/* Decorative Elements */}
           <div 
             className="absolute -top-10 -right-10 w-20 h-20 rounded-full opacity-10"
-            style={{ backgroundColor: '#FEFE02' }}
+            style={{ backgroundColor: '#f5092d' }}
           ></div>
           <div 
             className="absolute -bottom-10 -left-10 w-16 h-16 rounded-full opacity-10"
-            style={{ backgroundColor: '#FEFE02' }}
+            style={{ backgroundColor: '#f5092d' }}
           ></div>
 
           {/* Header */}
@@ -523,7 +523,7 @@ const globeConfig = {
                 <div 
                   className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 pointer-events-none"
                   style={{ 
-                    background: `linear-gradient(135deg, #FEFE02 0%, #FEFE02 100%)`,
+                    background: `linear-gradient(135deg, #f5092d 0%, #f5092d 100%)`,
                     opacity: focusedField === 'name' ? 0.1 : 0 
                   }}
                 ></div>
@@ -546,7 +546,7 @@ const globeConfig = {
                 <div 
                   className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 pointer-events-none"
                   style={{ 
-                    background: `linear-gradient(135deg, #FEFE02 0%, #FEFE02 100%)`,
+                    background: `linear-gradient(135deg, #f5092d 0%, #f5092d 100%)`,
                     opacity: focusedField === 'email' ? 0.1 : 0 
                   }}
                 ></div>
@@ -570,7 +570,7 @@ const globeConfig = {
                 <div 
                   className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 pointer-events-none"
                   style={{ 
-                    background: `linear-gradient(135deg, #FEFE02 0%, #FEFE02 100%)`,
+                    background: `linear-gradient(135deg, #f5092d 0%, #f5092d 100%)`,
                     opacity: focusedField === 'guests' ? 0.1 : 0 
                   }}
                 ></div>
@@ -593,7 +593,7 @@ const globeConfig = {
                 <div 
                   className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 pointer-events-none"
                   style={{ 
-                    background: `linear-gradient(135deg, #FEFE02 0%, #FEFE02 100%)`,
+                    background: `linear-gradient(135deg, #f5092d 0%, #f5092d 100%)`,
                     opacity: focusedField === 'message' ? 0.1 : 0 
                   }}
                 ></div>
@@ -606,7 +606,7 @@ const globeConfig = {
               disabled={isSubmitting}
               className="w-full h-16 rounded-2xl text-black text-lg font-bold transition-all duration-300 transform hover:scale-105 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center group relative overflow-hidden"
               style={{
-                background: `linear-gradient(135deg, #FEFE02 0%, #FEFE02 100%)`,
+                background: `linear-gradient(135deg, #f5092d 0%, #f5092d 100%)`,
                 boxShadow: '0 8px 25px rgba(254, 254, 2, 0.3)'
               }}
             >
@@ -635,7 +635,7 @@ const globeConfig = {
           <div 
             className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full opacity-30 animate-bounce"
             style={{ 
-              backgroundColor: '#FEFE02',
+              backgroundColor: '#f5092d',
               animationDelay: '0s',
               animationDuration: '3s'
             }}
@@ -643,7 +643,7 @@ const globeConfig = {
           <div 
             className="absolute top-3/4 right-1/3 w-1 h-1 rounded-full opacity-40 animate-bounce"
             style={{ 
-              backgroundColor: '#FEFE02',
+              backgroundColor: '#f5092d',
               animationDelay: '1s',
               animationDuration: '2s'
             }}
@@ -651,7 +651,7 @@ const globeConfig = {
           <div 
             className="absolute top-1/2 right-1/4 w-1.5 h-1.5 rounded-full opacity-20 animate-bounce"
             style={{ 
-              backgroundColor: '#FEFE02',
+              backgroundColor: '#f5092d',
               animationDelay: '2s',
               animationDuration: '2.5s'
             }}

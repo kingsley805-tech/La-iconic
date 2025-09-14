@@ -83,10 +83,10 @@ const PlaceCard: React.FC<PlaceCardProps> = ({
       }}
     >
       {/* Subtle accent overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FEFE02]/5 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#f5092d]/5 via-transparent to-transparent pointer-events-none" />
 
       {/* Decorative corner accent */}
-      <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-[#FEFE02]/20 to-transparent rounded-br-full" />
+      <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-[#f5092d]/20 to-transparent rounded-br-full" />
 
       {/* Image */}
       <div className="relative overflow-hidden">
@@ -110,7 +110,7 @@ const PlaceCard: React.FC<PlaceCardProps> = ({
           className="absolute top-3 right-3 p-2 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white transition-all transform hover:scale-110 shadow-md border border-gray-200/50"
         >
           {isFavorite ? (
-            <IoHeart className="text-[#FEFE02] text-xl" />
+            <IoHeart className="text-[#f5092d] text-xl" />
           ) : (
             <IoHeartOutline className="text-gray-600 text-xl" />
           )}
@@ -147,7 +147,7 @@ const PlaceCard: React.FC<PlaceCardProps> = ({
         </div>
 
         {/* Book Now Button */}
-        <button className=" bg-gradient-to-r w-20  text-white from-black to-black hover:from-[#FEFE02] hover:to-[#FEFE02]  py-1 rounded-lg font-semibold transition-all duration-300 transform hover:scale-[1.03] hover:shadow-lg border border-[#FEFE02]/30">
+        <button className=" bg-gradient-to-r w-20  text-white from-black to-black hover:from-[#f5092d] hover:to-[#f5092d]  py-1 rounded-lg font-semibold transition-all duration-300 transform hover:scale-[1.03] hover:shadow-lg border border-[#f5092d]/30">
           Book Now
         </button>
       </div>
@@ -186,17 +186,17 @@ const OrderPopup: React.FC<OrderPopupProps> = ({ orderPopup, setOrderPopup, sele
         />
         <div className="space-y-3">
           <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-            <IoLocationSharp className="text-[#FEFE02]" />
+            <IoLocationSharp className="text-[#f5092d]" />
             <span>{selectedPlace.location}</span>
           </div>
           <p className="text-gray-700 dark:text-gray-300">{selectedPlace.description}</p>
           <div className="flex justify-between items-center pt-4 border-t">
             <span className="text-sm text-gray-500">{selectedPlace.type}</span>
-            <span className="text-2xl font-bold text-[#FEFE02]">${selectedPlace.price}</span>
+            <span className="text-2xl font-bold text-[#f5092d]">${selectedPlace.price}</span>
           </div>
           <button
             onClick={() => setOrderPopup(false)}
-            className="w-full bg-gradient-to-r from-[#FEFE02] to-[#FEFE02] hover:from-[#FEFE02] hover:to-[#FEFE02] text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+            className="w-full bg-gradient-to-r from-[#f5092d] to-[#f5092d] hover:from-[#f5092d] hover:to-[#f5092d] text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
           >
             Book This Destination
           </button>
@@ -222,14 +222,14 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({
     >
       <div className="bg-white dark:bg-slate-900 p-8 rounded-lg shadow-xl max-w-lg w-full mx-4 transform transition-all duration-300">
         <div className="text-center">
-          <div className="w-16 h-16 bg-green-100 dark:bg-[#FEFE02] rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-[#FEFE02]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-16 h-16 bg-green-100 dark:bg-[#f5092d] rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8 text-[#f5092d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
             </svg>
           </div>
           <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">Booking Confirmed!</h2>
           <p className="text-gray-600 dark:text-gray-300 mb-6">
-            Your trip to <span className="font-semibold text-[#FEFE02]">{bookedPlace.title}</span> has been booked
+            Your trip to <span className="font-semibold text-[#f5092d]">{bookedPlace.title}</span> has been booked
             successfully.
           </p>
 
@@ -847,7 +847,7 @@ const WorldPlacesShowcase: React.FC = () => {
               <input
                 type="text"
                 placeholder="Search destination..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 dark:bg-slate-800 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FEFE02] focus:border-[#FEFE02] shadow-sm hover:shadow-md transition-all duration-300"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 dark:bg-slate-800 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f5092d] focus:border-[#f5092d] shadow-sm hover:shadow-md transition-all duration-300"
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}
               />
             </div>
@@ -869,7 +869,7 @@ const WorldPlacesShowcase: React.FC = () => {
             <div className="flex justify-center mt-16 ">
               <button
                 onClick={handleViewMore}
-                className="bg-[#FEFE02] hover:bg-[#FEFE02] text-white py-1 px-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+                className="bg-[#f5092d] hover:bg-[#f5092d] text-white py-1 px-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
               >
                 View More
               </button>

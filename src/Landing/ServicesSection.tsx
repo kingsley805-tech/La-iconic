@@ -52,7 +52,7 @@ export default function ToursSection() {
   <div className="max-w-3xl text-left">
     <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6 leading-tight">
       Discover Your LA 
-      <span className="bg-gradient-to-r from-[#FEFE02] to-[#FEFE02] bg-clip-text text-transparent"> Journey</span>
+      <span className="bg-gradient-to-r from-[#f5092d] to-[#f5092d] bg-clip-text text-transparent"> Journey</span>
     </h2>
     <p className="text-xl text-gray-600 leading-relaxed">
       Experience Los Angeles in a whole new way with our exciting 90-minute tours—running every hour and guided by locals who make the city come alive.
@@ -94,7 +94,7 @@ export default function ToursSection() {
               <motion.div 
                 className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300"
                 style={{
-                  background: 'linear-gradient(135deg, #FEFE02 0%, #FEFE02 100%)',
+                  background: 'linear-gradient(135deg, #f5092d 0%, #f5092d 100%)',
                   boxShadow: '6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.8)'
                 }}
                 whileHover={{
@@ -115,7 +115,7 @@ export default function ToursSection() {
               >
                 <tour.icon className="w-8 h-8 text-white" />
               </motion.div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-2 group-hover:text-[#FEFE02] transition-colors duration-300">
+              <h3 className="text-2xl font-bold text-gray-800 mb-2 group-hover:text-[#f5092d] transition-colors duration-300">
                 {tour.title}
               </h3>
               <p className="text-gray-600 leading-relaxed mb-6">{tour.description}</p>
@@ -140,7 +140,7 @@ export default function ToursSection() {
                          transition: { duration: 0.5 }
                        }}
                      >
-                       <CheckCircle className="w-5 h-5 text-[#FEFE02]" />
+                       <CheckCircle className="w-5 h-5 text-[#f5092d]" />
                      </motion.div>
                      <span className="text-gray-700">{feature}</span>
                    </motion.div>

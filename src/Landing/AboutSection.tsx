@@ -51,7 +51,7 @@ export default function AboutSection() {
             <div className="space-y-6">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-800">
                 Why Choose
-                <span className="block  text-[#FEFE02] bg-clip-text ">
+                <span className="block  text-[#f5092d] bg-clip-text ">
                   LA Tour?
                 </span> {/* Changed to Dasfan Logistics for clarity */}
               </h2>
@@ -104,7 +104,7 @@ export default function AboutSection() {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="flex items-center space-x-3"
                 >
-                  <CheckCircle className="w-5 h-5 text-[#FEFE02] flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-[#f5092d] flex-shrink-0" />
                   <span className="text-gray-700">{benefit}</span>
                 </motion.div>
               ))}
@@ -149,7 +149,7 @@ export default function AboutSection() {
               }}
             >
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#FEFE02]">15+</div>
+                <div className="text-3xl font-bold text-[#f5092d]">15+</div>
                 <div className="text-sm text-gray-600">Years Experience</div>
               </div>
             </motion.div>
@@ -171,7 +171,7 @@ export default function AboutSection() {
               }}
             >
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#FEFE02]">98%</div>
+                <div className="text-3xl font-bold text-[#f5092d]">98%</div>
                 <div className="text-sm text-gray-600">Customer Satisfaction</div>
               </div>
             </motion.div>

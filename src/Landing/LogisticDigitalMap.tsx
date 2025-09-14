@@ -161,7 +161,7 @@ const TourismWorldMap: React.FC = () => {
       >
         {/* Header */}
         <div className="absolute top-5 left-1/2 sm:left-5 transform -translate-x-1/2 sm:translate-x-0 z-50 bg-white bg-opacity-70 p-4 rounded-xl backdrop-blur-md text-center sm:text-left w-[90vw] sm:w-auto">
-          <h1 className="text-xl sm:text-2xl mb-1 bg-clip-text text-[#FEFE02] font-bold">
+          <h1 className="text-xl sm:text-2xl mb-1 bg-clip-text text-[#f5092d] font-bold">
             Global Tourism Network
           </h1>
           <p className="text-sm opacity-80 text-black">Real-time travel routes and destination data</p>
@@ -179,7 +179,7 @@ const TourismWorldMap: React.FC = () => {
                   className="absolute h-0.5 opacity-70"
                   style={{
                     ...getRouteStyle(route),
-                    background: 'linear-gradient(90deg, transparent 0%, #FEFE02 20%, #FEFE02 80%, transparent 100%)',
+                    background: 'linear-gradient(90deg, transparent 0%, #f5092d 20%, #f5092d 80%, transparent 100%)',
                     animation: `flow 3s linear infinite`,
                     animationDelay: `${index * 0.5}s`,
                   }}
@@ -191,17 +191,17 @@ const TourismWorldMap: React.FC = () => {
                 <div
                   key={destination.id}
                   className={`absolute w-3 h-3 rounded-full cursor-pointer pointer-events-auto transition-all duration-300 hover:scale-150 ${
-                    destination.status === 'crowded' ? 'bg-[#FEFE02]' : destination.status === 'restricted' ? 'bg-[#FEFE02]' : 'bg-[#FEFE02]'
+                    destination.status === 'crowded' ? 'bg-[#f5092d]' : destination.status === 'restricted' ? 'bg-[#f5092d]' : 'bg-[#f5092d]'
                   }`}
                   style={{
                     left: `${destination.x}%`,
                     top: `${destination.y}%`,
                     background:
                       destination.status === 'open'
-                        ? 'radial-gradient(circle, black 0%, #FEFE02 100%)'
+                        ? 'radial-gradient(circle, black 0%, #f5092d 100%)'
                         : destination.status === 'crowded'
-                        ? 'radial-gradient(circle, #FEFE02 0%, #FEFE02 100%)'
-                        : 'radial-gradient(circle, #FEFE02 0%, #FEFE02 100%)',
+                        ? 'radial-gradient(circle, #f5092d 0%, #f5092d 100%)'
+                        : 'radial-gradient(circle, #f5092d 0%, #f5092d 100%)',
                     boxShadow: `0 0 15px rgba(59, 130, 246, 0.8)`,
                     animation: 'pulse 2s infinite',
                   }}
@@ -217,57 +217,57 @@ const TourismWorldMap: React.FC = () => {
         <div className="absolute hidden md:block top-5 right-5 w-80 bg-black bg-opacity-80 pb-6 rounded-2xl p-5 backdrop-blur-md border border-white border-opacity-10 max-h-[80vh] overflow-y-auto">
           {/* Global Tourism Volume */}
           <div className="flex items-center justify-center">
-            <div className="bg-white bg-opacity-10 mb-4 p-4 rounded-xl border-l-4 border-[#FEFE02]">
-              <h3 className="text-lg mb-2 text-[#FEFE02] font-semibold">Global Tourism Volume</h3>
+            <div className="bg-white bg-opacity-10 mb-4 p-4 rounded-xl border-l-4 border-[#f5092d]">
+              <h3 className="text-lg mb-2 text-[#f5092d] font-semibold">Global Tourism Volume</h3>
               <div className="flex justify-between mb-1">
                 <span className="text-black">Daily Visitors:</span>
-                <span className="font-bold text-[#FEFE02]">{metrics.dailyVisitors}</span>
+                <span className="font-bold text-[#f5092d]">{metrics.dailyVisitors}</span>
               </div>
               <div className="flex justify-between mb-1">
                 <span className="text-black">Active Routes:</span>
-                <span className="font-bold text-[#FEFE02]">{metrics.activeRoutes}</span>
+                <span className="font-bold text-[#f5092d]">{metrics.activeRoutes}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-black">Attraction Rating:</span>
-                <span className="font-bold text-[#FEFE02]">{metrics.attractionRating}</span>
+                <span className="font-bold text-[#f5092d]">{metrics.attractionRating}</span>
               </div>
             </div>
           </div>
 
           {/* Top Travel Routes */}
-          <div className="bg-white bg-opacity-10 mb-4 p-4 rounded-xl border-l-4 border-[#FEFE02]">
-            <h3 className="text-lg mb-2 text-[#FEFE02] font-semibold">Top Travel Routes</h3>
+          <div className="bg-white bg-opacity-10 mb-4 p-4 rounded-xl border-l-4 border-[#f5092d]">
+            <h3 className="text-lg mb-2 text-[#f5092d] font-semibold">Top Travel Routes</h3>
             <p className="text-sm leading-relaxed text-black">
-              <strong className="text-[#FEFE02]">1.</strong> Europe-USA: 8.5M visitors/year
+              <strong className="text-[#f5092d]">1.</strong> Europe-USA: 8.5M visitors/year
             </p>
             <p className="text-sm leading-relaxed text-black">
-              <strong className="text-[#FEFE02]">2.</strong> Southeast Asia-Japan: 6.2M visitors/year
+              <strong className="text-[#f5092d]">2.</strong> Southeast Asia-Japan: 6.2M visitors/year
             </p>
             <p className="text-sm leading-relaxed text-black">
-              <strong className="text-[#FEFE02]">3.</strong> Intra-Europe: 12.1M visitors/year
+              <strong className="text-[#f5092d]">3.</strong> Intra-Europe: 12.1M visitors/year
             </p>
           </div>
 
           {/* Top Destinations */}
-          <div className="bg-white bg-opacity-10 mb-4 p-4 rounded-xl border-l-4 border-[#FEFE02]">
-            <h3 className="text-lg mb-2 text-[#FEFE02] font-semibold">Top Destinations</h3>
+          <div className="bg-white bg-opacity-10 mb-4 p-4 rounded-xl border-l-4 border-[#f5092d]">
+            <h3 className="text-lg mb-2 text-[#f5092d] font-semibold">Top Destinations</h3>
             <p className="text-sm leading-relaxed text-black">
-              <strong className="text-[#FEFE02]">Bangkok:</strong> 22.8M visitors
+              <strong className="text-[#f5092d]">Bangkok:</strong> 22.8M visitors
             </p>
             <p className="text-sm leading-relaxed text-black">
-              <strong className="text-[#FEFE02]">Paris:</strong> 19.1M visitors
+              <strong className="text-[#f5092d]">Paris:</strong> 19.1M visitors
             </p>
             <p className="text-sm leading-relaxed text-black">
-              <strong className="text-[#FEFE02]">London:</strong> 19.2M visitors
+              <strong className="text-[#f5092d]">London:</strong> 19.2M visitors
             </p>
             <p className="text-sm leading-relaxed text-black">
-              <strong className="text-[#FEFE02]">Dubai:</strong> 16.7M visitors
+              <strong className="text-[#f5092d]">Dubai:</strong> 16.7M visitors
             </p>
           </div>
 
           {/* Current Alerts */}
-          <div className="bg-white bg-opacity-10 p-4 rounded-xl border-l-4 border-[#FEFE02]">
-            <h3 className="text-lg mb-2 text-[#FEFE02] font-semibold">Current Alerts</h3>
+          <div className="bg-white bg-opacity-10 p-4 rounded-xl border-l-4 border-[#f5092d]">
+            <h3 className="text-lg mb-2 text-[#f5092d] font-semibold">Current Alerts</h3>
             {alerts.map((alert) => (
               <p key={alert.id} className="text-sm leading-relaxed" style={{ color: alert.color }}>
                 {alert.icon} {alert.location}: {alert.message}
@@ -279,15 +279,15 @@ const TourismWorldMap: React.FC = () => {
         {/* Legend */}
         <div className="absolute bottom-5 left-5 bg-black bg-opacity-80 p-4 rounded-xl backdrop-blur-md">
           <div className="flex items-center mb-2">
-            <div className="w-5 h-1 mr-3 rounded bg-[#FEFE02]"></div>
+            <div className="w-5 h-1 mr-3 rounded bg-[#f5092d]"></div>
             <span className="text-sm">Major Destinations</span>
           </div>
           <div className="flex items-center mb-2">
-            <div className="w-5 h-1 mr-3 rounded bg-[#FEFE02]"></div>
+            <div className="w-5 h-1 mr-3 rounded bg-[#f5092d]"></div>
             <span className="text-sm">Travel Routes</span>
           </div>
           <div className="flex items-center">
-            <div className="w-5 h-1 mr-3 rounded bg-[#FEFE02]"></div>
+            <div className="w-5 h-1 mr-3 rounded bg-[#f5092d]"></div>
             <span className="text-sm">High Traffic</span>
           </div>
         </div>
@@ -295,7 +295,7 @@ const TourismWorldMap: React.FC = () => {
         {/* Tooltip */}
         {tooltip.visible && (
           <div
-            className="absolute bg-black bg-opacity-90 text-white p-3 rounded-lg text-xs pointer-events-none z-50 border border-[#FEFE02] transition-opacity duration-300"
+            className="absolute bg-black bg-opacity-90 text-white p-3 rounded-lg text-xs pointer-events-none z-50 border border-[#f5092d] transition-opacity duration-300"
             style={{
               left: tooltip.x,
               top: tooltip.y,
@@ -323,57 +323,57 @@ const TourismWorldMap: React.FC = () => {
       <div className="block md:hidden mx-auto mt-6 mb-6 w-[90%] bg-black bg-opacity-80 pb-6 rounded-2xl p-5 backdrop-blur-md border border-white border-opacity-10 max-h-[80vh] overflow-y-auto">
         {/* Global Tourism Volume */}
         <div className="flex items-center justify-center">
-          <div className="bg-white bg-opacity-10 mb-4 p-4 rounded-xl border-l-4 border-[#FEFE02] w-full">
-            <h3 className="text-lg mb-2 text-[#FEFE02] font-semibold">Global Tourism Volume</h3>
+          <div className="bg-white bg-opacity-10 mb-4 p-4 rounded-xl border-l-4 border-[#f5092d] w-full">
+            <h3 className="text-lg mb-2 text-[#f5092d] font-semibold">Global Tourism Volume</h3>
             <div className="flex justify-between mb-1">
               <span className="text-black">Daily Visitors:</span>
-              <span className="font-bold text-[#FEFE02]">{metrics.dailyVisitors}</span>
+              <span className="font-bold text-[#f5092d]">{metrics.dailyVisitors}</span>
             </div>
             <div className="flex justify-between mb-1">
               <span className="text-black">Active Routes:</span>
-              <span className="font-bold text-[#FEFE02]">{metrics.activeRoutes}</span>
+              <span className="font-bold text-[#f5092d]">{metrics.activeRoutes}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-black">Attraction Rating:</span>
-              <span className="font-bold text-[#FEFE02]">{metrics.attractionRating}</span>
+              <span className="font-bold text-[#f5092d]">{metrics.attractionRating}</span>
             </div>
           </div>
         </div>
 
         {/* Top Travel Routes */}
-        <div className="bg-white bg-opacity-10 mb-4 p-4 rounded-xl border-l-4 border-[#FEFE02]">
-          <h3 className="text-lg mb-2 text-[#FEFE02] font-semibold">Top Travel Routes</h3>
+        <div className="bg-white bg-opacity-10 mb-4 p-4 rounded-xl border-l-4 border-[#f5092d]">
+          <h3 className="text-lg mb-2 text-[#f5092d] font-semibold">Top Travel Routes</h3>
           <p className="text-sm leading-relaxed text-black">
-            <strong className="text-[#FEFE02]">1.</strong> Europe-USA: 8.5M visitors/year
+            <strong className="text-[#f5092d]">1.</strong> Europe-USA: 8.5M visitors/year
           </p>
           <p className="text-sm leading-relaxed text-black">
-            <strong className="text-[#FEFE02]">2.</strong> Southeast Asia-Japan: 6.2M visitors/year
+            <strong className="text-[#f5092d]">2.</strong> Southeast Asia-Japan: 6.2M visitors/year
           </p>
           <p className="text-sm leading-relaxed text-black">
-            <strong className="text-[#FEFE02]">3.</strong> Intra-Europe: 12.1M visitors/year
+            <strong className="text-[#f5092d]">3.</strong> Intra-Europe: 12.1M visitors/year
           </p>
         </div>
 
         {/* Top Destinations */}
-        <div className="bg-white bg-opacity-10 mb-4 p-4 rounded-xl border-l-4 border-[#FEFE02]">
-          <h3 className="text-lg mb-2 text-[#FEFE02] font-semibold">Top Destinations</h3>
+        <div className="bg-white bg-opacity-10 mb-4 p-4 rounded-xl border-l-4 border-[#f5092d]">
+          <h3 className="text-lg mb-2 text-[#f5092d] font-semibold">Top Destinations</h3>
           <p className="text-sm leading-relaxed text-black">
-            <strong className="text-[#FEFE02]">Bangkok:</strong> 22.8M visitors
+            <strong className="text-[#f5092d]">Bangkok:</strong> 22.8M visitors
           </p>
           <p className="text-sm leading-relaxed text-black">
-            <strong className="text-[#FEFE02]">Paris:</strong> 19.1M visitors
+            <strong className="text-[#f5092d]">Paris:</strong> 19.1M visitors
           </p>
           <p className="text-sm leading-relaxed text-black">
-            <strong className="text-[#FEFE02]">London:</strong> 19.2M visitors
+            <strong className="text-[#f5092d]">London:</strong> 19.2M visitors
           </p>
           <p className="text-sm leading-relaxed text-black">
-            <strong className="text-[#FEFE02]">Dubai:</strong> 16.7M visitors
+            <strong className="text-[#f5092d]">Dubai:</strong> 16.7M visitors
           </p>
         </div>
 
         {/* Current Alerts */}
-        <div className="bg-white bg-opacity-10 p-4 rounded-xl border-l-4 border-[#FEFE02]">
-          <h3 className="text-lg mb-2 text-[#FEFE02] font-semibold">Current Alerts</h3>
+        <div className="bg-white bg-opacity-10 p-4 rounded-xl border-l-4 border-[#f5092d]">
+          <h3 className="text-lg mb-2 text-[#f5092d] font-semibold">Current Alerts</h3>
           {alerts.map((alert) => (
             <p key={alert.id} className="text-sm leading-relaxed" style={{ color: alert.color }}>
               {alert.icon} {alert.location}: {alert.message}

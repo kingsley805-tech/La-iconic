@@ -84,7 +84,7 @@ export default function HeroSection() {
   >
     <motion.span className="inline-block">Discover</motion.span>
     <motion.span 
-      className="block text-[#FEFE02] bg-clip-text "
+      className="block text-[#f5092d] bg-clip-text "
     >
       World-Class Tours,
     </motion.span>
@@ -120,7 +120,7 @@ export default function HeroSection() {
                 size="lg"
                 className="group rounded-2xl px-8 py-4 text-lg font-semibold transition-all duration-300 w-full sm:w-auto"
                 style={{
-                  background: 'linear-gradient(135deg, #FEFE02 0%, #FEFE02 100%)',
+                  background: 'linear-gradient(135deg, #f5092d 0%, #f5092d 100%)',
                   boxShadow: '6px 6px 12px rgba(0, 0, 0, 0.1), -6px -6px 12px rgba(255, 255, 255, 0.8)',
                   border: 'none'
                 }}
@@ -194,7 +194,7 @@ export default function HeroSection() {
               transition: { duration: 0.6 }
             }}
           >
-            <Ship className="w-8 h-8 text-[#FEFE02]" />
+            <Ship className="w-8 h-8 text-[#f5092d]" />
           </motion.div>
 
           <motion.div
@@ -218,7 +218,7 @@ export default function HeroSection() {
               transition: { duration: 0.6 }
             }}
           >
-            <Truck className="w-8 h-8 text-[#FEFE02]" />
+            <Truck className="w-8 h-8 text-[#f5092d]" />
           </motion.div>
         </motion.div>
       </div>

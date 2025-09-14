@@ -82,7 +82,7 @@ function AnimatedNumber({ value, suffix, index }: AnimatedNumberProps) {
   return (
     <div
       ref={nodeRef}
-      className="text-4xl lg:text-5xl font-bold text-[#FEFE02] mb-2"
+      className="text-4xl lg:text-5xl font-bold text-[#f5092d] mb-2"
       style={{
         opacity: isVisible ? 1 : 0,
         transition: `opacity 0.8s ease ${index * 0.1}s`
@@ -141,7 +141,7 @@ export default function StatsSection() {
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
             Trusted by
-            <span className="bg-gradient-to-r from-[#FEFE02] to-[#FEFE02] bg-clip-text text-transparent"> Thousands</span>
+            <span className="bg-gradient-to-r from-[#f5092d] to-[#f5092d] bg-clip-text text-transparent"> Thousands</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Our numbers speak for themselves. See why businesses worldwide choose Dasfan for their logistics needs.

@@ -94,15 +94,15 @@ export default function Home() {
                   <motion.div
                     className="w-8 h-8 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center text-white font-bold text-lg sm:text-xl"
                     style={{
-                      color: "#FEFE02",
+                      color: "#f5092d",
                       boxShadow:
-                        "4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px #FEFE02",
+                        "4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px #f5092d",
                     }}
                     whileHover={{
                       rotate: [0, -10, 10, -10, 0],
                       scale: 1.1,
                       boxShadow:
-                        "6px 6px 12px rgba(253, 247, 86, 0.5), -6px -6px 12px #FEFE02",
+                        "6px 6px 12px rgba(253, 247, 86, 0.5), -6px -6px 12px #f5092d",
                     }}
                     transition={{ duration: 0.6 }}
                   >
@@ -119,9 +119,9 @@ export default function Home() {
                   </motion.div>
                   <span className="flex items-center text-xl sm:text-2xl font-bold text-gray-800 space-x-2">
                     <span className="text-white font-bold flex items-center">
-                      LA <Star className="text-[#FEFE02]" />
+                      LA <Star className="text-[#f5092d]" />
                     </span>
-                    <span className="text-[#FEFE02] font-bold">Iconic</span>
+                    <span className="text-[#f5092d] font-bold">Iconic</span>
                   </span>
                 </motion.div>
 
@@ -131,11 +131,11 @@ export default function Home() {
                     <motion.a
                       key={item}
                       href={`#${item.toLowerCase().replace(" ", "-")}`}
-                      className="text-white hover:text-[#FEFE02] font-medium transition-colors duration-300"
+                      className="text-white hover:text-[#f5092d] font-medium transition-colors duration-300"
                       whileHover={{
                         y: -2,
                         scale: 1.05,
-                        color: "#FEFE02",
+                        color: "#f5092d",
                       }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
@@ -151,7 +151,7 @@ export default function Home() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Button
-                    className="rounded-xl px-6 py-3 text-black hover:text-white text-center font-semibold transition-all duration-300 bg-[#FEFE02]"
+                    className="rounded-xl px-6 py-3 text-black hover:text-white text-center font-semibold transition-all duration-300 bg-[#f5092d]"
                     style={{
                       boxShadow:
                         "4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.8)",
@@ -172,7 +172,7 @@ export default function Home() {
                 <div className="lg:hidden">
                   <motion.button
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    className="p-2 rounded-lg text-gray-700 hover:text-[#FEFE02] hover:bg-gray-200 transition-colors duration-200"
+                    className="p-2 rounded-lg text-gray-700 hover:text-[#f5092d] hover:bg-gray-200 transition-colors duration-200"
                     whileTap={{ scale: 0.95 }}
                     aria-label="Toggle mobile menu"
                   >
@@ -248,15 +248,15 @@ export default function Home() {
                   <motion.div
                     className="w-8 h-8 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center text-white font-bold text-lg sm:text-xl"
                     style={{
-                      color: "#FEFE02",
+                      color: "#f5092d",
                       boxShadow:
-                        "4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px #FEFE02",
+                        "4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px #f5092d",
                     }}
                     whileHover={{
                       rotate: [0, -10, 10, -10, 0],
                       scale: 1.1,
                       boxShadow:
-                        "6px 6px 12px rgba(253, 247, 86, 0.5), -6px -6px 12px #FEFE02",
+                        "6px 6px 12px rgba(253, 247, 86, 0.5), -6px -6px 12px #f5092d",
                     }}
                     transition={{ duration: 0.6 }}
                   >
@@ -273,7 +273,7 @@ export default function Home() {
                   </motion.div>
                   <span className="flex items-center text-xl sm:text-2xl font-bold text-gray-800 space-x-2">
                     <span className="text-white font-bold flex items-center">
-                      LA <Star className="text-[#FEFE02]" />
+                      LA <Star className="text-[#f5092d]" />
                     </span>
                     <span className="text-white font-bold">Iconic</span>
                   </span>
@@ -315,7 +315,7 @@ export default function Home() {
                             whileTap={{ scale: 0.95 }}
                           >
                             <Button
-                              className="w-full rounded-xl px-6 py-3 text-center font-semibold transition-all duration-300 bg-white text-[#FEFE02] hover:bg-orange-50 border-none"
+                              className="w-full rounded-xl px-6 py-3 text-center font-semibold transition-all duration-300 bg-white text-[#f5092d] hover:bg-orange-50 border-none"
                               onClick={() => {
                                 handleLinkClick();
                                 const contactSection =
@@ -372,15 +372,15 @@ export default function Home() {
                   <motion.div
                     className="w-8 h-8 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center text-white font-bold text-lg sm:text-xl"
                     style={{
-                      color: "#FEFE02",
+                      color: "#f5092d",
                       boxShadow:
-                        "4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px #FEFE02",
+                        "4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px #f5092d",
                     }}
                     whileHover={{
                       rotate: [0, -10, 10, -10, 0],
                       scale: 1.1,
                       boxShadow:
-                        "6px 6px 12px rgba(253, 247, 86, 0.5), -6px -6px 12px #FEFE02",
+                        "6px 6px 12px rgba(253, 247, 86, 0.5), -6px -6px 12px #f5092d",
                     }}
                     transition={{ duration: 0.6 }}
                   >
@@ -397,9 +397,9 @@ export default function Home() {
                   </motion.div>
                   <span className="flex items-center text-xl sm:text-2xl font-bold text-gray-800 space-x-2">
                     <span className="text-white font-bold flex items-center">
-                      LA <Star className="text-[#FEFE02]" />
+                      LA <Star className="text-[#f5092d]" />
                     </span>
-                    <span className="text-[#FEFE02] font-bold">Iconic</span>
+                    <span className="text-[#f5092d] font-bold">Iconic</span>
                   </span>
                 </motion.div>
             </div>
@@ -419,7 +419,7 @@ export default function Home() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-10 h-10 bg-gray-700/50 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-[#FEFE02] hover:text-gray-900 transition-all duration-300 group border border-gray-600/30"
+                  className="w-10 h-10 bg-gray-700/50 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-[#f5092d] hover:text-gray-900 transition-all duration-300 group border border-gray-600/30"
                 >
                   <Icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                 </a>
@@ -431,7 +431,7 @@ export default function Home() {
           <div className="lg:col-span-3">
             <h3 className="text-xl font-semibold mb-6 text-white relative">
               Popular Tours
-              <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-[#FEFE02] to-transparent" />
+              <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-[#f5092d] to-transparent" />
             </h3>
             <ul className="space-y-3">
               {[
@@ -442,8 +442,8 @@ export default function Home() {
                 "Venice Beach & Santa Monica"
               ].map((item, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-300 hover:text-[#FEFE02] transition-colors duration-300 text-sm group flex items-center">
-                    <span className="w-1 h-1 bg-gray-500 rounded-full mr-3 group-hover:bg-[#FEFE02] transition-colors duration-300" />
+                  <a href="#" className="text-gray-300 hover:text-[#f5092d] transition-colors duration-300 text-sm group flex items-center">
+                    <span className="w-1 h-1 bg-gray-500 rounded-full mr-3 group-hover:bg-[#f5092d] transition-colors duration-300" />
                     {item}
                   </a>
                 </li>
@@ -455,7 +455,7 @@ export default function Home() {
           <div className="lg:col-span-2">
             <h3 className="text-xl font-semibold mb-6 text-white relative">
               Quick Links
-              <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-[#FEFE02] to-transparent" />
+              <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-[#f5092d] to-transparent" />
             </h3>
             <ul className="space-y-3">
               {[
@@ -466,8 +466,8 @@ export default function Home() {
                 "FAQ"
               ].map((item, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-300 hover:text-[#FEFE02] transition-colors duration-300 text-sm group flex items-center">
-                    <span className="w-1 h-1 bg-gray-500 rounded-full mr-3 group-hover:bg-[#FEFE02] transition-colors duration-300" />
+                  <a href="#" className="text-gray-300 hover:text-[#f5092d] transition-colors duration-300 text-sm group flex items-center">
+                    <span className="w-1 h-1 bg-gray-500 rounded-full mr-3 group-hover:bg-[#f5092d] transition-colors duration-300" />
                     {item}
                   </a>
                 </li>
@@ -479,18 +479,18 @@ export default function Home() {
           <div className="lg:col-span-3">
             <h3 className="text-xl font-semibold mb-6 text-white relative">
               Get In Touch
-              <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-[#FEFE02] to-transparent" />
+              <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-[#f5092d] to-transparent" />
             </h3>
             
             <div className="space-y-4">
               {/* Phone */}
               <div className="flex items-start space-x-3 group">
                 <div className="w-8 h-8 bg-gray-700/50 backdrop-blur-sm rounded-lg flex items-center justify-center mt-0.5 border border-gray-600/30">
-                  <Phone className="w-4 h-4 text-[#FEFE02]" />
+                  <Phone className="w-4 h-4 text-[#f5092d]" />
                 </div>
                 <div>
                   <p className="text-gray-400 text-xs uppercase tracking-wide font-medium">Phone</p>
-                  <a href="tel:+13106005176" className="text-white hover:text-[#FEFE02] transition-colors duration-300">
+                  <a href="tel:+13106005176" className="text-white hover:text-[#f5092d] transition-colors duration-300">
                     (310) 600-5176
                   </a>
                 </div>
@@ -499,11 +499,11 @@ export default function Home() {
               {/* Email */}
               <div className="flex items-start space-x-3 group">
                 <div className="w-8 h-8 bg-gray-700/50 backdrop-blur-sm rounded-lg flex items-center justify-center mt-0.5 border border-gray-600/30">
-                  <Mail className="w-4 h-4 text-[#FEFE02]" />
+                  <Mail className="w-4 h-4 text-[#f5092d]" />
                 </div>
                 <div>
                   <p className="text-gray-400 text-xs uppercase tracking-wide font-medium">Email</p>
-                  <a href="mailto:losangelesiconictourllc@gmail.com" className="text-white hover:text-[#FEFE02] transition-colors duration-300 text-sm break-all">
+                  <a href="mailto:losangelesiconictourllc@gmail.com" className="text-white hover:text-[#f5092d] transition-colors duration-300 text-sm break-all">
                     losangelesiconictourllc@gmail.com
                   </a>
                 </div>
@@ -512,7 +512,7 @@ export default function Home() {
               {/* Hours */}
               <div className="flex items-start space-x-3 group">
                 <div className="w-8 h-8 bg-gray-700/50 backdrop-blur-sm rounded-lg flex items-center justify-center mt-0.5 border border-gray-600/30">
-                  <Clock className="w-4 h-4 text-[#FEFE02]" />
+                  <Clock className="w-4 h-4 text-[#f5092d]" />
                 </div>
                 <div>
                   <p className="text-gray-400 text-xs uppercase tracking-wide font-medium">Hours</p>
@@ -523,7 +523,7 @@ export default function Home() {
               {/* Address */}
               <div className="flex items-start space-x-3 group">
                 <div className="w-8 h-8 bg-gray-700/50 backdrop-blur-sm rounded-lg flex items-center justify-center mt-0.5 border border-gray-600/30">
-                  <MapPin className="w-4 h-4 text-[#FEFE02]" />
+                  <MapPin className="w-4 h-4 text-[#f5092d]" />
                 </div>
                 <div>
                   <p className="text-gray-400 text-xs uppercase tracking-wide font-medium">Address</p>
@@ -542,13 +542,13 @@ export default function Home() {
             </p>
             
             <div className="flex items-center space-x-6 text-sm">
-              <a href="#" className="text-gray-600 hover:text-[#FEFE02] transition-colors duration-300">
+              <a href="#" className="text-gray-600 hover:text-[#f5092d] transition-colors duration-300">
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-600 hover:text-[#FEFE02] transition-colors duration-300">
+              <a href="#" className="text-gray-600 hover:text-[#f5092d] transition-colors duration-300">
                 Terms of Service
               </a>
-              <a href="#" className="text-gray-600 hover:text-[#FEFE02] transition-colors duration-300">
+              <a href="#" className="text-gray-600 hover:text-[#f5092d] transition-colors duration-300">
                 Cancellation Policy
               </a>
             </div>

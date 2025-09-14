@@ -18,8 +18,8 @@ export default function ExperienceSection() {
       label: "Years of Exploration",
       description:
         "Over two decades of crafting unforgettable travel experiences worldwide.",
-      startColor: "#FEFE02",
-      endColor: "#FEFE02",
+      startColor: "#f5092d",
+      endColor: "#f5092d",
     },
     {
       icon: Users2,
@@ -27,8 +27,8 @@ export default function ExperienceSection() {
       label: "Expert Guides",
       description:
         "Passionate travel experts and local guides ensuring authentic adventures.",
-      startColor: "#FEFE02",
-      endColor: "#FEFE02",
+      startColor: "#f5092d",
+      endColor: "#f5092d",
     },
     {
       icon: TrendingUp,
@@ -36,8 +36,8 @@ export default function ExperienceSection() {
       label: "Happy Travelers",
       description:
         "Half a million explorers have trusted us for their dream vacations.",
-      startColor: "#FEFE02",
-      endColor: "#FEFE02",
+      startColor: "#f5092d",
+      endColor: "#f5092d",
     },
     {
       icon: Globe,
@@ -45,8 +45,8 @@ export default function ExperienceSection() {
       label: "Destinations Explored",
       description:
         "From iconic landmarks to hidden gems, we connect you to the world’s wonders.",
-      startColor: "#FEFE02",
-      endColor: "#FEFE02",
+      startColor: "#f5092d",
+      endColor: "#f5092d",
     },
   ];
 
@@ -123,7 +123,7 @@ export default function ExperienceSection() {
           <div className="max-w-3xl text-center">
             <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
               <span>Two Decades of </span>
-              <span className="block bg-gradient-to-r from-[#FEFE02] to-[#FEFE02] bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[#f5092d] to-[#f5092d] bg-clip-text text-transparent">
                 Travel Excellence
               </span>
             </h2>
@@ -181,7 +181,7 @@ export default function ExperienceSection() {
                 </motion.div>
 
                 <motion.div
-                  className="text-4xl lg:text-5xl font-bold mb-2 bg-gradient-to-r from-[#FEFE02] to-[#FEFE02] bg-clip-text text-transparent"
+                  className="text-4xl lg:text-5xl font-bold mb-2 bg-gradient-to-r from-[#f5092d] to-[#f5092d] bg-clip-text text-transparent"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
@@ -214,7 +214,7 @@ export default function ExperienceSection() {
           </motion.h3>
 
           <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-[#FEFE02] to-[#FEFE02] rounded-full"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-[#f5092d] to-[#f5092d] rounded-full"></div>
 
             {milestones.map((milestone, index) => (
               <motion.div
@@ -246,17 +246,17 @@ export default function ExperienceSection() {
                       }`}
                     >
                       <motion.div
-                        className="w-10 h-10 rounded-xl bg-[#FEFE02]/30 flex items-center justify-center"
+                        className="w-10 h-10 rounded-xl bg-[#f5092d]/30 flex items-center justify-center"
                         whileHover={{
                           rotate: 360,
                           scale: 1.2,
-                          backgroundColor: "#FEFE02",
+                          backgroundColor: "#f5092d",
                         }}
                         transition={{ duration: 0.5 }}
                       >
                         <milestone.icon className="w-5 h-5 text-black" />
                       </motion.div>
-                      <span className="text-2xl font-bold text-[#FEFE02]">
+                      <span className="text-2xl font-bold text-[#f5092d]">
                         {milestone.year}
                       </span>
                     </div>
@@ -273,7 +273,7 @@ export default function ExperienceSection() {
                   className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full"
                   style={{
                     background:
-                      "linear-gradient(135deg, #FEFE02 0%, #FEFE02 100%)",
+                      "linear-gradient(135deg, #f5092d 0%, #f5092d 100%)",
                     boxShadow:
                       "0 0 0 4px white, 0 0 0 8px rgba(254, 254, 2, 0.3)",
                   }}
@@ -324,7 +324,7 @@ export default function ExperienceSection() {
                 className="text-center p-8 rounded-2xl bg-white shadow-lg"
               >
                 <motion.div
-                  className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#FEFE02] to-[#FEFE02] flex items-center justify-center mx-auto mb-4"
+                  className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#f5092d] to-[#f5092d] flex items-center justify-center mx-auto mb-4"
                   whileHover={{
                     rotate: [0, -5, 5, 0],
                     scale: 1.1,

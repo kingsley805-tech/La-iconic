@@ -34,7 +34,7 @@ export default function TourTestimonialsSection() {
       id="testimonials"
       className="py-20"
       style={{
-        background: "linear-gradient(to right, #FEFE02, #FEFE02)",
+        background: "linear-gradient(to right, #f5092d, #f5092d)",
       }}
     >
       <div className="max-w-7xl mx-auto px-6">
@@ -48,7 +48,7 @@ export default function TourTestimonialsSection() {
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
             Voices from Our
-            <span className="block bg-gradient-to-r from-[#FEFE02] to-[#FEFE02] bg-clip-text text-white">
+            <span className="block bg-gradient-to-r from-[#f5092d] to-[#f5092d] bg-clip-text text-white">
               LA Adventure Tours
             </span>
           </h2>
@@ -85,7 +85,7 @@ export default function TourTestimonialsSection() {
                 {/* Avatar */}
                 <div className="flex items-center mb-4">
                   <div
-                    className="w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-[#FEFE02] transition-transform duration-300 group-hover:scale-110"
+                    className="w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-[#f5092d] transition-transform duration-300 group-hover:scale-110"
                     style={{
                       boxShadow:
                         "inset 2px 2px 4px rgba(0, 0, 0, 0.2), inset -2px -2px 4px rgba(253, 247, 86, 0.6)",
@@ -111,7 +111,7 @@ export default function TourTestimonialsSection() {
                     <Star
                       key={i}
                       className="w-5 h-5"
-                      style={{ color: "#FEFE02", fill: "#FEFE02" }}
+                      style={{ color: "#f5092d", fill: "#f5092d" }}
                     />
                   ))}
                 </div>
