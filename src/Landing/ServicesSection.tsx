@@ -19,7 +19,7 @@ export default function ToursSection() {
     {
       icon: Camera,
       title: "Beverly Hills & Coastal Highlights",
-      description: "Experience LA’s luxury and scenic beauty on this 1:30 hour tour departing hourly.",
+      description: "Experience LA luxury and scenic beauty on this 1:30 hour tour departing hourly.",
       image: "https://images.unsplash.com/photo-1609716969697-a9711e718023?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fENvYXN0YWwlMjBIaWdobGlnaHRzfGVufDB8fDB8fHww",
       features: [
         "Griffith Park & Hollywood Sign Views",
@@ -40,7 +40,7 @@ export default function ToursSection() {
   };
 
   return (
-    <section id="tours" className="py-20 bg-gray-100">
+    <section id="services" className="py-20 bg-gray-100">
       <div className="max-w-7xl mx-auto px-6 mt-10">
        <motion.div
   initial={{ opacity: 0, y: 30 }}

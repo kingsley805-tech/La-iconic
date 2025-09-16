@@ -66,7 +66,7 @@ export default function ContactSection() {
     {/* Main Content - Flex Container */}
     <div className="flex flex-col lg:flex-row items-stretch justify-center gap-8 lg:gap-12 min-h-[600px] p-4">
       {/* Globe Section */}
-      <div className="flex-1 py-20 dark:bg-black bg-transparent rounded-2xl rounded-3xl flex items-center justify-center">
+      <div className="flex-1 py-20 dark:bg-black bg-transparent  rounded-3xl flex items-center justify-center">
         <div className="mx-auto text-center">
           <p className="font-bold text-xl md:text-4xl dark:text-white text-black">
             Remote{" "}

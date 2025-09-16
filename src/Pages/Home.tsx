@@ -13,7 +13,7 @@ import GlobalNetworkSection from "../Landing/GlobalNetworkSection";
 import WhyChooseUsSection from "../Landing/WhyChooseUsSection";
 import TestimonialsSection from "../Landing/TestimonialsSection";
 import ContactSection from "../Landing/ContactSection";
-
+import About from '../Landing/AboutSection';
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -52,6 +52,7 @@ export default function Home() {
 
   const navLinks = [
     "Services",
+    "About",
     "Experience",
     "Network",
     "Why Us",
@@ -64,7 +65,7 @@ export default function Home() {
       {!showContent ? (
         <div className="flex items-center justify-center min-h-screen w-full px-4">
           <DotLottieReact
-            src="https://lottie.host/ae6a8e55-5d48-45b8-9a17-00f943ad0463/UQv2jAn6XM.lottie"
+            src="https://lottie.host/b152639c-6d77-4eca-81f0-1211408e5777/2fN6vtwn3k.lottie"
             loop
             autoplay
             style={{ maxWidth: "100%", height: "auto" }}
@@ -340,12 +341,13 @@ export default function Home() {
           </motion.nav>
 
           {/* Main Content */}
-          <main>
+          <main className="">
             <HeroSection />
             <ServicesSection />
             <ExperienceSection />
             <SpecializedLogisticsSection />
             <GlobalNetworkSection />
+            <About />
             <WhyChooseUsSection />
             <TestimonialsSection />
             <ContactSection />

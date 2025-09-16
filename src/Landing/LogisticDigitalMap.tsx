@@ -61,31 +61,32 @@ const TourismWorldMap: React.FC = () => {
 
   // Static data
   const destinations: Destination[] = [
-    { id: '1', name: 'Paris', x: 50, y: 28, visitors: '19.1M', country: 'France', status: 'open' },
-    { id: '2', name: 'Bangkok', x: 68, y: 48, visitors: '22.8M', country: 'Thailand', status: 'open' },
-    { id: '3', name: 'London', x: 49, y: 27, visitors: '19.2M', country: 'UK', status: 'open' },
-    { id: '4', name: 'New York', x: 20, y: 35, visitors: '13.6M', country: 'USA', status: 'open' },
-    { id: '5', name: 'Rome', x: 52, y: 32, visitors: '10.3M', country: 'Italy', status: 'crowded' },
-    { id: '6', name: 'Dubai', x: 58, y: 42, visitors: '16.7M', country: 'UAE', status: 'open' },
-    { id: '7', name: 'Tokyo', x: 74, y: 32, visitors: '12.9M', country: 'Japan', status: 'open' },
-    { id: '8', name: 'Barcelona', x: 50, y: 30, visitors: '9.0M', country: 'Spain', status: 'open' },
-    { id: '9', name: 'Sydney', x: 80, y: 65, visitors: '5.3M', country: 'Australia', status: 'open' },
-    { id: '10', name: 'Istanbul', x: 55, y: 35, visitors: '13.4M', country: 'Turkey', status: 'open' },
-  ];
+  { id: '1', name: 'Hollywood Walk of Fame', x: 20, y: 35, visitors: '10M', country: 'USA', status: 'open' },
+  { id: '2', name: 'Griffith Observatory & Park', x: 22, y: 32, visitors: '7.5M', country: 'USA', status: 'open' },
+  { id: '3', name: 'Santa Monica Pier & Beach', x: 18, y: 38, visitors: '12M', country: 'USA', status: 'open' },
+  { id: '4', name: 'Venice Beach & Canals', x: 19, y: 40, visitors: '8M', country: 'USA', status: 'open' },
+  { id: '5', name: 'Rodeo Drive, Beverly Hills', x: 21, y: 34, visitors: '5M', country: 'USA', status: 'crowded' },
+  { id: '6', name: 'Malibu Coastline', x: 16, y: 36, visitors: '4M', country: 'USA', status: 'open' },
+  { id: '7', name: 'Universal Studios Hollywood', x: 23, y: 31, visitors: '11M', country: 'USA', status: 'open' },
+  { id: '8', name: 'The Getty Center', x: 20, y: 33, visitors: '6M', country: 'USA', status: 'open' },
+  { id: '9', name: 'Downtown LA Skyline', x: 24, y: 37, visitors: '9M', country: 'USA', status: 'open' },
+  { id: '10', name: 'Catalina Island Day Trip', x: 26, y: 42, visitors: '1M', country: 'USA', status: 'open' },
+];
 
-  const routes: TravelRoute[] = [
-    { id: '1', from: { x: 50, y: 28 }, to: { x: 20, y: 35 }, name: 'Europe-USA', volume: '8.5M visitors/year' },
-    { id: '2', from: { x: 68, y: 48 }, to: { x: 74, y: 32 }, name: 'Southeast Asia-Japan', volume: '6.2M visitors/year' },
-    { id: '3', from: { x: 50, y: 28 }, to: { x: 52, y: 32 }, name: 'Intra-Europe', volume: '12.1M visitors/year' },
-    { id: '4', from: { x: 58, y: 42 }, to: { x: 55, y: 35 }, name: 'Middle East-Turkey', volume: '4.8M visitors/year' },
-    { id: '5', from: { x: 74, y: 32 }, to: { x: 80, y: 65 }, name: 'Japan-Australia', volume: '3.9M visitors/year' },
-  ];
+const routes: TravelRoute[] = [
+  { id: '1', from: { x: 20, y: 35 }, to: { x: 22, y: 32 }, name: 'Hollywood Griffith Park', volume: '2M visitors/year' },
+  { id: '2', from: { x: 18, y: 38 }, to: { x: 19, y: 40 }, name: 'Santa Monica Venice Boardwalk', volume: '5M visitors/year' },
+  { id: '3', from: { x: 21, y: 34 }, to: { x: 16, y: 36 }, name: 'Beverly Hills Malibu Coast', volume: '1.2M visitors/year' },
+  { id: '4', from: { x: 23, y: 31 }, to: { x: 24, y: 37 }, name: 'Universal Studios Downtown LA', volume: '3.5M visitors/year' },
+  { id: '5', from: { x: 20, y: 33 }, to: { x: 26, y: 42 }, name: 'Getty Center Catalina Island', volume: '800k visitors/year' },
+];
 
-  const alerts: Alert[] = [
-    { id: '1', location: 'Paris', status: 'warning', message: 'High tourist volume at landmarks', icon: '⚠️', color: 'black' },
-    { id: '2', location: 'Sydney', status: 'normal', message: 'Normal tourist flow', icon: '✅', color: 'black' },
-    { id: '3', location: 'Rome', status: 'critical', message: 'Crowding at Colosseum', icon: '🔴', color: 'black' },
-  ];
+const alerts: Alert[] = [
+  { id: '1', location: 'Rodeo Drive, Beverly Hills', status: 'warning', message: 'High traffic & luxury shopping crowds', icon: '⚠️', color: 'black' },
+  { id: '2', location: 'Santa Monica Pier & Beach', status: 'normal', message: 'Normal beach flow, busy evenings', icon: '✅', color: 'black' },
+  { id: '3', location: 'Hollywood Walk of Fame', status: 'critical', message: 'Heavy crowding at star-lined sidewalks', icon: '🔴', color: 'black' },
+];
+
 
   // Event handlers
   const handleDestinationHover = (destination: Destination, event: React.MouseEvent) => {
@@ -235,35 +236,37 @@ const TourismWorldMap: React.FC = () => {
           </div>
 
           {/* Top Travel Routes */}
-          <div className="bg-white bg-opacity-10 mb-4 p-4 rounded-xl border-l-4 border-[#f5092d]">
-            <h3 className="text-lg mb-2 text-[#f5092d] font-semibold">Top Travel Routes</h3>
-            <p className="text-sm leading-relaxed text-black">
-              <strong className="text-[#f5092d]">1.</strong> Europe-USA: 8.5M visitors/year
-            </p>
-            <p className="text-sm leading-relaxed text-black">
-              <strong className="text-[#f5092d]">2.</strong> Southeast Asia-Japan: 6.2M visitors/year
-            </p>
-            <p className="text-sm leading-relaxed text-black">
-              <strong className="text-[#f5092d]">3.</strong> Intra-Europe: 12.1M visitors/year
-            </p>
-          </div>
+       {/* Top Travel Routes (Los Angeles) */}
+<div className="bg-white bg-opacity-10 mb-4 p-4 rounded-xl border-l-4 border-[#f5092d]">
+  <h3 className="text-lg mb-2 text-[#f5092d] font-semibold">Top Travel Routes</h3>
+  <p className="text-sm leading-relaxed text-black">
+    <strong className="text-[#f5092d]">1.</strong> Hollywood ⇆ Griffith Observatory: 2M visitors/year
+  </p>
+  <p className="text-sm leading-relaxed text-black">
+    <strong className="text-[#f5092d]">2.</strong> Santa Monica Pier ⇆ Venice Beach: 5M visitors/year
+  </p>
+  <p className="text-sm leading-relaxed text-black">
+    <strong className="text-[#f5092d]">3.</strong> Beverly Hills ⇆ Malibu Coastline: 1.2M visitors/year
+  </p>
+</div>
 
-          {/* Top Destinations */}
-          <div className="bg-white bg-opacity-10 mb-4 p-4 rounded-xl border-l-4 border-[#f5092d]">
-            <h3 className="text-lg mb-2 text-[#f5092d] font-semibold">Top Destinations</h3>
-            <p className="text-sm leading-relaxed text-black">
-              <strong className="text-[#f5092d]">Bangkok:</strong> 22.8M visitors
-            </p>
-            <p className="text-sm leading-relaxed text-black">
-              <strong className="text-[#f5092d]">Paris:</strong> 19.1M visitors
-            </p>
-            <p className="text-sm leading-relaxed text-black">
-              <strong className="text-[#f5092d]">London:</strong> 19.2M visitors
-            </p>
-            <p className="text-sm leading-relaxed text-black">
-              <strong className="text-[#f5092d]">Dubai:</strong> 16.7M visitors
-            </p>
-          </div>
+{/* Top Destinations (Los Angeles) */}
+<div className="bg-white bg-opacity-10 mb-4 p-4 rounded-xl border-l-4 border-[#f5092d]">
+  <h3 className="text-lg mb-2 text-[#f5092d] font-semibold">Top Destinations</h3>
+  <p className="text-sm leading-relaxed text-black">
+    <strong className="text-[#f5092d]">Hollywood Walk of Fame:</strong> 10M visitors
+  </p>
+  <p className="text-sm leading-relaxed text-black">
+    <strong className="text-[#f5092d]">Santa Monica Pier & Beach:</strong> 12M visitors
+  </p>
+  <p className="text-sm leading-relaxed text-black">
+    <strong className="text-[#f5092d]">Griffith Observatory & Park:</strong> 7.5M visitors
+  </p>
+  <p className="text-sm leading-relaxed text-black">
+    <strong className="text-[#f5092d]">Universal Studios Hollywood:</strong> 11M visitors
+  </p>
+</div>
+
 
           {/* Current Alerts */}
           <div className="bg-white bg-opacity-10 p-4 rounded-xl border-l-4 border-[#f5092d]">
