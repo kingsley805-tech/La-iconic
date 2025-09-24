@@ -141,13 +141,14 @@ const PlaceCard: React.FC<PlaceCardProps> = ({
         {/* Price Section */}
         <div className="flex items-center justify-between border-t border-gray-200/60 pt-3 mt-auto">
           <p className="text-sm text-gray-600">Starting from</p>
-          <p className="text-2xl font-bold text-black drop-shadow-sm">
-            ${price}
+          <p className="text-sm flex flex-col font-bold text-black drop-shadow-sm">
+            <span>Adults:1 x $60.00</span>
+<span>Children:1 x $45.00</span>
           </p>
         </div>
 
         {/* Book Now Button */}
-        <button className=" bg-gradient-to-r w-20  text-white from-black to-black hover:from-[#f5092d] hover:to-[#f5092d]  py-1 rounded-lg font-semibold transition-all duration-300 transform hover:scale-[1.03] hover:shadow-lg border border-[#f5092d]/30">
+        <button className=" bg-gradient-to-r w-24  text-white from-[#f5092d] to-[#f5092d] hover:from-black hover:to-[#f5092d]  py-1 rounded-lg font-semibold transition-all duration-300 transform hover:scale-[1.03] hover:shadow-lg border border-[#f5092d]/30">
           Book Now
         </button>
       </div>
@@ -267,13 +268,7 @@ const WorldPlacesShowcase: React.FC = () => {
   const [showBooking, setShowBooking] = useState<boolean>(false);
   const [bookedPlace, setBookedPlace] = useState<Place | null>(null);
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [visibleItems, setVisibleItems] = useState<number>(9);
 
-  useEffect(() => {
-    setTimeout(() => {
-      initAOS();
-    }, 100);
-  }, [visibleItems]); // Re-run initAOS when visibleItems changes
 
   const handleOrderPopup = (place: Place): void => {
     setSelectedPlace(place);
@@ -285,10 +280,7 @@ const WorldPlacesShowcase: React.FC = () => {
     setShowBooking(true);
   };
 
-  const handleViewMore = (): void => {
-    setVisibleItems((prev) => prev + 9);
-  };
-
+ 
   const worldPlaces: Place[] = [
     {
       img: "https://images.unsplash.com/photo-1528181304800-259b08848526?w=500&q=80",
@@ -466,303 +458,8 @@ const WorldPlacesShowcase: React.FC = () => {
       price: "45",
       type: "Waterfront District"
     },
-    {
-      img: "https://media.istockphoto.com/id/2160438957/photo/friendly-teacher-reading-a-book-to-pupils-during-literature-class.webp?a=1&b=1&s=612x612&w=0&k=20&c=zzMSxvDDBSj1YrZicwSu1t2N7pf1Ey-p32v76i2Uzbc=",
-      title: "LA Insider Stories Tour",
-      location: "Los Angeles, USA",
-      description: "Behind-the-scenes stories and local secrets shared by knowledgeable LA guides.",
-      price: "75",
-      type: "Storytelling Tour"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1678266561093-324802646fb2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8U2FudG9yaW5pfGVufDB8fDB8fHww",
-      title: "Santorini",
-      location: "Greece",
-      description: "Beautiful white-washed buildings overlooking the stunning Aegean Sea with breathtaking sunsets.",
-      price: "1299",
-      type: "Island Paradise"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8TWFjaHUlMjBQaWNjaHV8ZW58MHx8MHx8fDA%3D",
-      title: "Machu Picchu",
-      location: "Peru",
-      description: "Ancient Incan citadel set high in the Andes Mountains, one of the New Seven Wonders of the World.",
-      price: "899",
-      type: "Historical Site"
-    },
-    {
-      img: "https://plus.unsplash.com/premium_photo-1694475476616-7e9a2c0c3927?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8QmFuZmYlMjBOYXRpb25hbCUyMFBhcmt8ZW58MHx8MHx8fDA%3D",
-      title: "Banff National Park",
-      location: "Canada",
-      description: "Pristine wilderness with turquoise lakes, snow-capped mountains, and abundant wildlife.",
-      price: "799",
-      type: "Nature Reserve"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmFsaXxlbnwwfHwwfHx8MA%3D%3D",
-      title: "Bali",
-      location: "Indonesia",
-      description: "Tropical paradise with lush rice terraces, ancient temples, and world-class beaches.",
-      price: "699",
-      type: "Tropical Island"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Tm9ydGhlcm4lMjBMaWdodHN8ZW58MHx8MHx8fDA%3D",
-      title: "Northern Lights",
-      location: "Iceland",
-      description: "Witness the magical Aurora Borealis dancing across the night sky in this Nordic wonderland.",
-      price: "1199",
-      type: "Natural Phenomenon"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8VGFqJTIwTWFoYWx8ZW58MHx8MHx8fDA%3D",
-      title: "Taj Mahal",
-      location: "India",
-      description: "Magnificent white marble mausoleum, a UNESCO World Heritage site and symbol of eternal love.",
-      price: "599",
-      type: "Monument"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8U3dpc3MlMjBBbHBzfGVufDB8fDB8fHww",
-      title: "Swiss Alps",
-      location: "Switzerland",
-      description: "Majestic mountain peaks, pristine lakes, and charming alpine villages in the heart of Europe.",
-      price: "1499",
-      type: "Mountain Range"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1587139223877-04cb899fa3e8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8R3JlYXQlMjBCYXJyaWVyJTIwUmVlZnxlbnwwfHwwfHx8MA%3D%3D",
-      title: "Great Barrier Reef",
-      location: "Australia",
-      description: "World's largest coral reef system with incredible marine biodiversity and crystal-clear waters.",
-      price: "1399",
-      type: "Marine Wonder"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1580834341580-8c17a3a630ca?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8UGV0cmF8ZW58MHx8MHx8fDA%3D",
-      title: "Petra",
-      location: "Jordan",
-      description: "Ancient archaeological wonder carved into rose-red cliffs, known as the 'Rose City'.",
-      price: "849",
-      type: "Archaeological Site"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8TWFsZGl2ZXN8ZW58MHx8MHx8fDA%3D",
-      title: "Maldives",
-      location: "Indian Ocean",
-      description: "Luxury overwater bungalows surrounded by crystal-clear lagoons and pristine white beaches.",
-      price: "2299",
-      type: "Luxury Resort"
-    },
-    {
-      img: "https://plus.unsplash.com/premium_photo-1661964177687-57387c2cbd14?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2hlcnJ5JTIwQmxvc3NvbXN8ZW58MHx8MHx8fDA%3D",
-      title: "Cherry Blossoms",
-      location: "Japan",
-      description: "Experience the magical sakura season with pink blossoms covering ancient temples and modern cities.",
-      price: "1099",
-      type: "Cultural Experience"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1558517286-8a9cb0b8c793?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8UGF0YWdvbmlhfGVufDB8fDB8fHww",
-      title: "Patagonia",
-      location: "Chile & Argentina",
-      description: "Dramatic landscapes of glaciers, mountains, and endless plains at the end of the world.",
-      price: "1699",
-      type: "Adventure Destination"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1707410436230-d4b2fba910e7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fFNlcmVuZ2V0aXxlbnwwfHwwfHx8MA%3D%3D",
-      title: "Serengeti",
-      location: "Tanzania",
-      description: "Witness the Great Migration and incredible wildlife in Africa's most famous national park.",
-      price: "1899",
-      type: "Wildlife Safari"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1533656338503-b22f63e96cd8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QW1hbGZpJTIwQ29hc3R8ZW58MHx8MHx8fDA%3D",
-      title: "Amalfi Coast",
-      location: "Italy",
-      description: "Stunning coastal towns perched on cliffs overlooking the Mediterranean Sea.",
-      price: "1199",
-      type: "Coastal Paradise"
-    },
-    {
-      img: "https://plus.unsplash.com/premium_photo-1664304492320-8359efcaad38?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8R3JlYXQlMjBXYWxsfGVufDB8fDB8fHww",
-      title: "Great Wall",
-      location: "China",
-      description: "Ancient fortification stretching thousands of miles across mountains and deserts.",
-      price: "699",
-      type: "Historical Wonder"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1696537380062-e6275d9a3c8e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Tm9yd2VnaWFuJTIwRmpvcmRzfGVufDB8fDB8fHww",
-      title: "Norwegian Fjords",
-      location: "Norway",
-      description: "Dramatic waterfalls cascading into deep blue fjords surrounded by towering cliffs.",
-      price: "1399",
-      type: "Natural Wonder"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1570097703229-b195d6dd291f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8RWlmZmVsJTIwVG93ZXJ8ZW58MHx8MHx8fDA%3D",
-      title: "Eiffel Tower",
-      location: "Paris, France",
-      description: "Iconic wrought-iron lattice tower on the Champ de Mars, named after the engineer Gustave Eiffel.",
-      price: "25",
-      type: "Landmark"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1655417591786-32c3833be1a6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8UHlyYW1pZCUyMG9mJTIwR2l6YXxlbnwwfHwwfHx8MA%3D%3D",
-      title: "Great Pyramid of Giza",
-      location: "Giza, Egypt",
-      description: "The oldest and largest of the three pyramids in the Giza pyramid complex.",
-      price: "30",
-      type: "Ancient Wonder"
-    },
-    {
-      img: "https://plus.unsplash.com/premium_photo-1681803531285-75db948035d3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8U3RhdHVlJTIwb2YlMjBMaWJlcnR5fGVufDB8fDB8fHww",
-      title: "Statue of Liberty",
-      location: "New York, USA",
-      description: "A colossal neoclassical sculpture on Liberty Island in New York Harbor.",
-      price: "25",
-      type: "Monument"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1523059623039-a9ed027e7fad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8U3lkbmV5JTIwT3BlcmElMjBIb3VzZXxlbnwwfHwwfHx8MA%3D%3D",
-      title: "Sydney Opera House",
-      location: "Sydney, Australia",
-      description: "A multi-venue performing arts centre at Sydney Harbour.",
-      price: "40",
-      type: "Architectural Marvel"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q29sb3NzZXVtfGVufDB8fDB8fHww",
-      title: "Colosseum",
-      location: "Rome, Italy",
-      description: "An oval amphitheatre in the centre of the city of Rome.",
-      price: "16",
-      type: "Historical Site"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1615551043360-33de8b5f410c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8R3JhbmQlMjBDYW55b258ZW58MHx8MHx8fDA%3D",
-      title: "Grand Canyon",
-      location: "Arizona, USA",
-      description: "A steep-sided canyon carved by the Colorado River.",
-      price: "35",
-      type: "Natural Wonder"
-    },
-    {
-      img: "https://plus.unsplash.com/premium_photo-1661963907351-3903b963a766?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fFZpY3RvcmlhJTIwRmFsbHN8ZW58MHx8MHx8fDA%3D",
-      title: "Victoria Falls",
-      location: "Zambia/Zimbabwe",
-      description: "One of the world's largest waterfalls.",
-      price: "50",
-      type: "Waterfall"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1559344465-ac6ad8e59943?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8TmlhZ2FyYSUyMEZhbGxzfGVufDB8fDB8fHww",
-      title: "Niagara Falls",
-      location: "Canada/USA",
-      description: "Massive waterfalls on the Niagara River.",
-      price: "25",
-      type: "Waterfall"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1591081658714-f576fb7ea3ed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QW1hem9uJTIwUmFpbmZvcmVzdHxlbnwwfHwwfHx8MA%3D%3D",
-      title: "Amazon Rainforest",
-      location: "South America",
-      description: "Vast tropical rainforest occupying the drainage basin of the Amazon River.",
-      price: "200",
-      type: "Rainforest"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1489573280374-2e193c63726c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8U2FoYXJhJTIwRGVzZXJ0fGVufDB8fDB8fHww",
-      title: "Sahara Desert",
-      location: "Africa",
-      description: "Largest hot desert in the world.",
-      price: "100",
-      type: "Desert"
-    },
-    {
-      img: "https://plus.unsplash.com/premium_photo-1688645554172-d3aef5f837ce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8TW91bnQlMjBFdmVyZXN0fGVufDB8fDB8fHww",
-      title: "Mount Everest",
-      location: "Nepal/Tibet",
-      description: "Earth's highest mountain above sea level.",
-      price: "3000",
-      type: "Mountain"
-    },
-    {
-      img: "https://plus.unsplash.com/premium_photo-1664304481949-7342698006f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QW50YXJjdGljYXxlbnwwfHwwfHx8MA%3D%3D",
-      title: "Antarctica",
-      location: "Antarctica",
-      description: "Earth's southernmost continent.",
-      price: "5000",
-      type: "Polar Region"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1706957614198-8d2e5f0ed6ea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8R2FsYXBhZ29zJTIwSXNsYW5kc3xlbnwwfHwwfHx8MA%3D%3D",
-      title: "Galapagos Islands",
-      location: "Ecuador",
-      description: "Archipelago of volcanic islands distributed on either side of the equator in the Pacific Ocean.",
-      price: "1000",
-      type: "Island Group"
-    },
-    {
-      img: "https://plus.unsplash.com/premium_photo-1697730034915-1a8b88f57257?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8RGVhZCUyMFNlYXxlbnwwfHwwfHx8MA%3D%3D",
-      title: "Dead Sea",
-      location: "Jordan/Israel",
-      description: "Salt lake bordered by Jordan to the east and Israel and the West Bank to the west.",
-      price: "50",
-      type: "Salt Lake"
-    },
-    {
-      img: "https://media.istockphoto.com/id/949851300/photo/small-venetian-canal-venice-italy.jpg?s=612x612&w=0&k=20&c=SIgasazQARcYbS7vNZD9GpuUvYOHZpYFICNY2qbjUAk=",
-      title: "Venice Canals",
-      location: "Venice, Italy",
-      description: "Series of canals in Venice, Italy.",
-      price: "80",
-      type: "Cityscape"
-    },
-    {
-      img: "https://media.istockphoto.com/id/2152551306/photo/london-cityscape-with-houses-of-parliament-and-big-ben-tower-uk.jpg?s=612x612&w=0&k=20&c=VyFGspHOtYmeq61ztCyccz31I4RttV14Ore1QYd5xG0=",
-      title: "Big Ben",
-      location: "London, UK",
-      description: "Nickname for the Great Bell of the striking clock at the north end of the Palace of Westminster.",
-      price: "0",
-      type: "Clock Tower"
-    },
-    {
-      img: "https://media.istockphoto.com/id/2170363356/photo/mount-fuji-from-scenic-gardens-and-lakes.jpg?s=612x612&w=0&k=20&c=rGIH1o4hTm2tUIkpuoaXgfUAvy6k27vgYYnniUMy1WI=",
-      title: "Mount Fuji",
-      location: "Japan",
-      description: "Active stratovolcano on Honshū in Japan.",
-      price: "10",
-      type: "Volcano"
-    },
-    {
-      img: "https://media.istockphoto.com/id/2023775352/photo/parthenon-and-acropolis-in-athens-greece.jpg?s=612x612&w=0&k=20&c=V8_w7rn_te7D6BFHvndqXxAwIoOBZI3XHiJJZfG5d28=",
-      title: "Acropolis",
-      location: "Athens, Greece",
-      description: "Ancient citadel located on a rocky outcrop above the city of Athens.",
-      price: "20",
-      type: "Ancient Site"
-    },
-    {
-      img: "https://media.istockphoto.com/id/2153081657/photo/drone-view-of-stonehenge-and-wiltshire-countryside-in-england-uk-the-stone-circle-dates-to.jpg?s=612x612&w=0&k=20&c=Za1wGt9HWdIiJVwrmuiga6MFtUAYuW7nG_x0RC9hSJA=",
-      title: "Stonehenge",
-      location: "Wiltshire, UK",
-      description: "Prehistoric monument in Wiltshire, England.",
-      price: "20",
-      type: "Megalith"
-    },
-    
-    {
-      img: "https://media.istockphoto.com/id/1872274401/photo/angkor-wat-temple-siem-reap-cambodia.jpg?s=612x612&w=0&k=20&c=6vUS8UcyKcrThGIe44MeF1k9ISZ5jJKbk6dlK_FsQFY=",
-      title: "Angkor Wat",
-      location: "Siem Reap, Cambodia",
-      description: "Temple complex in Cambodia and the largest religious monument in the world.",
-      price: "37",
-      type: "Temple"
-    }
+   
+   
   ];
 
   const filteredPlaces: Place[] = worldPlaces.filter(
@@ -854,7 +551,7 @@ const WorldPlacesShowcase: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
-            {filteredPlaces.slice(0, visibleItems).map((place, index) => (
+            {filteredPlaces.slice().map((place, index) => (
               <PlaceCard
                 key={`${place.title}-${index}`}
                 {...place}
@@ -865,16 +562,7 @@ const WorldPlacesShowcase: React.FC = () => {
             ))}
           </div>
 
-          {visibleItems < filteredPlaces.length && (
-            <div className="flex justify-center mt-16 ">
-              <button
-                onClick={handleViewMore}
-                className="bg-[#f5092d] hover:bg-[#f5092d] text-white py-1 px-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
-              >
-                View More
-              </button>
-            </div>
-          )}
+         
         </div>
 
         <OrderPopup orderPopup={orderPopup} setOrderPopup={setOrderPopup} selectedPlace={selectedPlace} />

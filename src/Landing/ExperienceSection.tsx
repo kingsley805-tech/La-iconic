@@ -202,7 +202,9 @@ export default function ExperienceSection() {
         </div>
 
         {/* Timeline */}
-        <div className="mb-28">
+        {/**
+         * 
+         * <div className="mb-28">
           <motion.h3
             className="text-3xl font-bold text-center text-black mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -294,7 +296,8 @@ export default function ExperienceSection() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </div> **/}
+        
 
         {/* Certifications */}
         <motion.div
