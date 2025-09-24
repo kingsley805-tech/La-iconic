@@ -130,7 +130,8 @@ const PlaceCard: React.FC<PlaceCardProps> = ({
 
         {/* Book Now Button */}
         <button className=" bg-gradient-to-r w-24  text-white from-[#f5092d] to-[#f5092d] hover:from-black hover:to-[#f5092d]  py-1 rounded-lg font-semibold transition-all duration-300 transform hover:scale-[1.03] hover:shadow-lg border border-[#f5092d]/30">
-          Book Now
+          
+          <a href="https://widgets.bokun.io/online-sales/2c4ad054-cded-4501-8eea-8863cf22683c/experience/1076736">Book Now</a>
         </button>
       </div>
     </motion.div>

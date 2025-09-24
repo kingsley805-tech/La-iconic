@@ -152,7 +152,7 @@ export default function Home() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Button
-                    className="rounded-xl px-6 py-3 text-black hover:text-white text-center font-semibold transition-all duration-300 bg-[#f5092d]"
+                    className="rounded-xl px-6 py-3 text-white hover:text-red-800 text-center font-semibold transition-all duration-300 bg-[#f5092d]"
                     style={{
                       boxShadow:
                         "4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.8)",
@@ -165,7 +165,8 @@ export default function Home() {
                       }
                     }}
                   >
-                    Book Us
+                    <a href="https://widgets.bokun.io/online-sales/2c4ad054-cded-4501-8eea-8863cf22683c/experience/1076736">Book Now</a>
+                    
                   </Button>
                 </motion.div>
 
