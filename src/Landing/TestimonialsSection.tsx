@@ -33,9 +33,7 @@ export default function TourTestimonialsSection() {
     <section
       id="testimonials"
       className="py-20"
-      style={{
-        background: "linear-gradient(to right, #f5092d, #f5092d)",
-      }}
+     
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
@@ -46,13 +44,13 @@ export default function TourTestimonialsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Voices from Our
             <span className="block bg-gradient-to-r from-[#f5092d] to-[#f5092d] bg-clip-text text-white">
               LA Adventure Tours
             </span>
           </h2>
-          <p className="text-xl text-black max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
             Hear from travelers who explored Los Angeles with us. Their stories
             capture the excitement, beauty, and unforgettable moments of our
             tours.
