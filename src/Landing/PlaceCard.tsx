@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { IoLocationSharp, IoClose, IoHeart, IoHeartOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
 
@@ -31,25 +31,6 @@ interface BookingConfirmationProps {
 }
 
 // Initialize AOS-like animation system
-const initAOS = (): void => {
-  const observerOptions: IntersectionObserverInit = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("aos-animate");
-        observer.unobserve(entry.target); // Stop observing after animation
-      }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll("[data-aos]").forEach((el) => {
-    observer.observe(el);
-  });
-};
 
 // PlaceCard Component
 const PlaceCard: React.FC<PlaceCardProps> = ({
@@ -57,7 +38,7 @@ const PlaceCard: React.FC<PlaceCardProps> = ({
   title,
   location,
   description,
-  price,
+  
   type,
   handleOrderPopup,
   index,

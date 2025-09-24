@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
 import {
-  Award,
+  
   Calendar,
-  MapPin,
   Users2,
   TrendingUp,
   Globe,
   ShieldCheck,
-  Star,
+  
 } from "lucide-react";
 
 export default function ExperienceSection() {
@@ -50,50 +49,6 @@ export default function ExperienceSection() {
     },
   ];
 
-  const milestones = [
-    {
-      year: "1999",
-      title: "Founded in the USA",
-      description:
-        "Began as a small tour operator with a passion for showcasing the beauty of the USA.",
-      icon: Star,
-    },
-    {
-      year: "2005",
-      title: "Global Adventures Launched",
-      description:
-        "Expanded tours to Africa and beyond, offering unique cultural experiences.",
-      icon: Globe,
-    },
-    {
-      year: "2012",
-      title: "Digital Booking Platform",
-      description:
-        "Introduced an online platform for seamless tour planning and bookings.",
-      icon: TrendingUp,
-    },
-    {
-      year: "2018",
-      title: "Sustainable Tourism Pledge",
-      description:
-        "Committed to eco-friendly travel and supporting local communities.",
-      icon: ShieldCheck,
-    },
-    {
-      year: "2024",
-      title: "AI-Personalized Itineraries",
-      description:
-        "Launched AI-driven tools to craft tailored travel experiences for every adventurer.",
-      icon: Award,
-    },
-    {
-      year: "2025",
-      title: "Beverly Hills Location Opened",
-      description:
-        "Established a new hub at 9850 W Olympic Blvd, Beverly Hills, CA 90211, USA, to kickstart your LA adventure.",
-      icon: MapPin,
-    },
-  ];
 
   const certifications = [
     { name: "ASTA Certified", description: "American Society of Travel Advisors" },
