@@ -132,7 +132,7 @@ export default function NotFoundPage(): JSX.Element {
 
         {/* Error message */}
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-4" style={{ animation: 'fadeInUp 1s ease-out' }}>
-          Page Not Found
+          Page Not Found 😒😒
         </h2>
         
         <p className="text-gray-400 text-lg md:text-xl mb-8 max-w-2xl mx-auto" style={{ animation: 'fadeInUp 1s ease-out 0.2s backwards' }}>
