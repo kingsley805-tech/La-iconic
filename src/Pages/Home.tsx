@@ -55,7 +55,7 @@ export default function Home() {
   useEffect(() => {
   const timer = setTimeout(() => {
     setShowContent(true);
-  }, 90 * 24 * 60 * 60 * 1000); // ~3 months (90 days) in milliseconds
+  }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
 
   return () => clearTimeout(timer); // cleanup on unmount
 }, []);

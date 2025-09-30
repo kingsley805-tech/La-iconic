@@ -1,14 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import { AlertCircle, Wrench, Home, ArrowLeft } from 'lucide-react';
+import { useState, useEffect, type JSX } from 'react';
+import { AlertCircle, Wrench } from 'lucide-react';
 
-export default function NotFoundPage() {
-  const [glitchActive, setGlitchActive] = useState(false);
-  const [particles, setParticles] = useState([]);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+interface Particle {
+  id: number;
+  x: number;
+  y: number;
+  size: number;
+  duration: number;
+  delay: number;
+}
+
+interface MousePosition {
+  x: number;
+  y: number;
+}
+
+export default function NotFoundPage(): JSX.Element {
+  const [glitchActive, setGlitchActive] = useState<boolean>(false);
+  const [particles, setParticles] = useState<Particle[]>([]);
+  const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
 
   useEffect(() => {
     // Generate random particles
-    const newParticles = Array.from({ length: 30 }, (_, i) => ({
+    const newParticles: Particle[] = Array.from({ length: 30 }, (_, i: number): Particle => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
@@ -19,7 +33,7 @@ export default function NotFoundPage() {
     setParticles(newParticles);
 
     // Random glitch effect
-    const glitchInterval = setInterval(() => {
+    const glitchInterval: NodeJS.Timeout = setInterval(() => {
       setGlitchActive(true);
       setTimeout(() => setGlitchActive(false), 200);
     }, 3000);
@@ -27,8 +41,8 @@ export default function NotFoundPage() {
     return () => clearInterval(glitchInterval);
   }, []);
 
-  const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>): void => {
+    const rect: DOMRect = e.currentTarget.getBoundingClientRect();
     setMousePosition({
       x: ((e.clientX - rect.left) / rect.width - 0.5) * 20,
       y: ((e.clientY - rect.top) / rect.height - 0.5) * 20
@@ -50,7 +64,7 @@ export default function NotFoundPage() {
       </div>
 
       {/* Floating particles */}
-      {particles.map(particle => (
+      {particles.map((particle: Particle) => (
         <div
           key={particle.id}
           className="absolute bg-red-500 rounded-full opacity-60"
@@ -143,28 +157,10 @@ export default function NotFoundPage() {
         </div>
 
         {/* Action buttons */}
-        <div 
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          style={{ animation: 'fadeInUp 1s ease-out 0.6s backwards' }}
-        >
-          <button className="group relative px-8 py-4 bg-red-600 text-white font-bold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-600/50">
-            <span className="relative z-10 flex items-center gap-2">
-              <Home className="w-5 h-5" />
-              Go Home
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-red-700 to-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
-          </button>
-          
-          <button className="group px-8 py-4 bg-transparent border-2 border-red-600 text-red-500 font-bold rounded-lg transition-all duration-300 hover:bg-red-600 hover:text-white hover:scale-105 hover:shadow-2xl hover:shadow-red-600/50">
-            <span className="flex items-center gap-2">
-              <ArrowLeft className="w-5 h-5 transition-transform group-hover:-translate-x-1" />
-              Go Back
-            </span>
-          </button>
-        </div>
+        
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes float {
           0%, 100% {
             transform: translateY(0) translateX(0);
