@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import logo from "../assets/iconic.webp";
 import { motion, AnimatePresence } from "framer-motion";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+{/**import { DotLottieReact } from "@lottiefiles/dotlottie-react"; */}
 import { X, Clock, Star, Phone, Mail,  MapPin, Instagram, Facebook, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
