@@ -14,6 +14,7 @@ import WhyChooseUsSection from "../Landing/WhyChooseUsSection";
 import TestimonialsSection from "../Landing/TestimonialsSection";
 import ContactSection from "../Landing/ContactSection";
 import About from '../Landing/AboutSection';
+import Notfound from '../Landing/404';
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -42,13 +43,22 @@ export default function Home() {
     };
   }, [isMobileMenuOpen]);
   const [showContent, setShowContent] = useState(false);
-  useEffect(() => {
+  {/**useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
     }, 8000); // 8 seconds
 
     return () => clearTimeout(timer); // cleanup on unmount
-  }, []);
+  }, []); */}
+
+
+  useEffect(() => {
+  const timer = setTimeout(() => {
+    setShowContent(true);
+  }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
+
+  return () => clearTimeout(timer); // cleanup on unmount
+}, []);
 
   const navLinks = [
     "Services",
@@ -62,15 +72,17 @@ export default function Home() {
 
   return (
     <>
-      {!showContent ? (
-        <div className="flex items-center justify-center min-h-screen w-full px-4">
+    {/** <div className="flex items-center justify-center min-h-screen w-full px-4">
           <DotLottieReact
             src="https://lottie.host/b152639c-6d77-4eca-81f0-1211408e5777/2fN6vtwn3k.lottie"
             loop
             autoplay
             style={{ maxWidth: "100%", height: "auto" }}
           />
-        </div>
+        </div> */}
+      {!showContent ? (
+      
+        <Notfound />
       ) : (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
           {/* Navigation */}
