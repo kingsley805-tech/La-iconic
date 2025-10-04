@@ -1,6 +1,12 @@
 import React, { useState} from "react";
 import { IoLocationSharp, IoClose, IoHeart, IoHeartOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
+import china from "../assets/Chinese .jpg"
+import santa from "../assets/santa monica.jpg"
+import dolby from "../assets/dolby.jpg"
+import walk from '../assets/walk.jpg'
+import bev from '../assets/bev.jpg'
+
 
 // Define interfaces for type safety
 interface Place {
@@ -265,15 +271,7 @@ const WorldPlacesShowcase: React.FC = () => {
  
   const worldPlaces: Place[] = [
     {
-      img: "https://images.unsplash.com/photo-1528181304800-259b08848526?w=500&q=80",
-      title: "Angkor Wat",
-      location: "Siem Reap, Cambodia",
-      description: "Temple complex in Cambodia and the largest religious monument in the world.",
-      price: "37",
-      type: "Temple"
-    },
-    {
-      img: "https://plus.unsplash.com/premium_photo-1737792868340-ca7c164d86e1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D",
+      img: walk,
       title: "Hollywood Walk of Fame",
       location: "Los Angeles, USA",
       description: "Famous sidewalk with over 2,700 stars honoring celebrities in entertainment industry.",
@@ -281,7 +279,7 @@ const WorldPlacesShowcase: React.FC = () => {
       type: "Cultural Landmark"
     },
     {
-      img: "https://plus.unsplash.com/premium_photo-1693236731045-5148457c0491?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2hpbmVzZSUyMFRoZWF0cmV8ZW58MHx8MHx8fDA%3D",
+      img: china,
       title: "TCL Chinese Theatre",
       location: "Hollywood, USA",
       description: "Historic movie palace famous for celebrity handprints and footprints in concrete.",
@@ -289,7 +287,7 @@ const WorldPlacesShowcase: React.FC = () => {
       type: "Historic Theater"
     },
     {
-      img: "https://images.unsplash.com/photo-1516307365426-bea591f05011?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8VGhlYXRyZXxlbnwwfHwwfHx8MA%3D%3D",
+      img: dolby,
       title: "Dolby Theatre",
       location: "Hollywood, USA",
       description: "Home of the Academy Awards ceremony, featuring state-of-the-art sound technology.",
@@ -313,104 +311,40 @@ const WorldPlacesShowcase: React.FC = () => {
       type: "Luxury Shopping"
     },
     {
-      img: "https://media.istockphoto.com/id/909093718/vector/antique-photograph-of-worlds-famous-sites-ocean-avenue-long-branch.jpg?s=612x612&w=0&k=20&c=qXXok4dmFC6LNYcIpHHW84r1bE8jnAX_KrtE_rVFSJs=",
-      title: "Downtown LA Historic Sites",
-      location: "Los Angeles, USA",
-      description: "Historic core of LA featuring architectural gems, museums, and cultural landmarks.",
-      price: "60",
-      type: "Historic District"
-    },
-    {
-      img: "https://plus.unsplash.com/premium_photo-1661964261790-d2d6b62014a1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fENlbGVicml0aWVzfGVufDB8fDB8fHww",
-      title: "Celebrity Homes Tour",
-      location: "Beverly Hills, USA",
-      description: "Guided tour through exclusive neighborhoods to see famous celebrity mansions and estates.",
-      price: "85",
-      type: "Celebrity Tour"
-    },
-    {
       img: "https://images.unsplash.com/photo-1572975165711-e9636eba67fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8R3JpZmZpdGglMjBPYnNlcnZhdG9yeXxlbnwwfHwwfHx8MA%3D%3D",
-      title: "Griffith Observatory",
+      title: "Griffith Observatory & LA Skyline Views",
       location: "Los Angeles, USA",
       description: "Iconic observatory offering stunning views of LA skyline and the Hollywood Sign.",
       price: "25",
       type: "Observatory"
     },
     {
-      img: "https://images.unsplash.com/photo-1638059957884-2faffe7b6943?q=80&w=817&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      title: "LA Skyline Viewpoints",
-      location: "Los Angeles, USA",
-      description: "Best spots to capture breathtaking panoramic views of the sprawling Los Angeles cityscape.",
-      price: "30",
-      type: "Scenic Viewpoint"
-    },
-    {
-      img: "https://plus.unsplash.com/premium_photo-1732738372625-8dc6a664ec78?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D",
-      title: "Hollywood Photo Tour",
-      location: "Hollywood, USA",
-      description: "Professional photo opportunities at iconic Hollywood locations with expert guidance.",
-      price: "75",
-      type: "Photo Experience"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1581390114939-946f9a890a7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8SG9sbHl3b29kfGVufDB8fDB8fHww",
-      title: "Hollywood & Beyond Tour",
-      location: "Los Angeles, USA",
-      description: "Comprehensive 1.5-hour guided tour covering Hollywood highlights and celebrity hotspots.",
-      price: "95",
-      type: "Guided Tour"
-    },
-    {
       img: "https://plus.unsplash.com/premium_photo-1663013514560-a30fbd137865?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8UGFyayUyMEFkdmVudHVyZXxlbnwwfHwwfHx8MA%3D%3D",
-      title: "Griffith Park Adventure",
+      title: "Griffith Park & Hollywood Sign Views",
       location: "Los Angeles, USA",
       description: "Explore one of the largest urban parks in North America with hiking trails and attractions.",
       price: "35",
       type: "Nature Park"
     },
     {
-      img: "https://images.unsplash.com/photo-1600617548211-a4b3d8e79369?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QmV2ZXJseSUyMEhpbGxzfGVufDB8fDB8fHww",
-      title: "Beverly Hills Highlights",
-      location: "Beverly Hills, USA",
-      description: "Luxury neighborhood tour featuring upscale shopping, dining, and celebrity hotspots.",
-      price: "70",
-      type: "Luxury Tour"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1648596363724-45115e354b87?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fEhvbGx5d29vZCUyMFNpZ24lMjBWaWV3c3xlbnwwfHwwfHx8MA%3D%3D",
-      title: "Hollywood Sign Views",
-      location: "Los Angeles, USA",
-      description: "Best vantage points to see and photograph the world-famous Hollywood Sign.",
-      price: "40",
-      type: "Iconic Landmark"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1709316124677-0b19280d00f9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8U3Vuc2V0JTIwU3RyaXB8ZW58MHx8MHx8fDA%3D",
-      title: "Sunset Strip Experience",
-      location: "West Hollywood, USA",
-      description: "Famous nightlife district with historic music venues, clubs, and restaurants.",
-      price: "55",
-      type: "Nightlife District"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8R2FyZGVuc3xlbnwwfHwwfHx8MA%3D%3D",
-      title: "Beverly Hills Gardens",
+      img: bev,
+      title: "Beverly Hills Gardens & Streets",
       location: "Beverly Hills, USA",
       description: "Beautiful landscaped streets and gardens in America's most exclusive neighborhood.",
       price: "45",
       type: "Garden Tour"
     },
     {
-      img: "https://plus.unsplash.com/premium_photo-1664202526047-405824c633e7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fFNob3BwaW5nfGVufDB8fDB8fHww",
-      title: "Luxury Boutique Shopping",
-      location: "Beverly Hills, USA",
-      description: "Exclusive shopping experience at world-renowned designer boutiques and luxury stores.",
-      price: "80",
-      type: "Shopping Experience"
+      img: santa,
+      title: "Santa Monica Beach & Venice Canals",
+      location: "Santa Monica, USA",
+      description: "Beautiful Pacific coastline with the famous Santa Monica Pier and pristine sandy beaches.",
+      price: "50",
+      type: "Beach Experience"
     },
     {
       img: "https://media.istockphoto.com/id/2223004939/photo/shocked-family-having-fun-while-watching-3d-movie-in-theatre.jpg?s=612x612&w=0&k=20&c=Wqcu1VvSy3YI-RQ4xREMR8756xynxNRwe3PA1PJzp7g=",
-      title: "Movie Locations Tour",
+      title: "Famous Movie Locations",
       location: "Los Angeles, USA",
       description: "Visit famous filming locations from blockbuster movies and TV shows throughout LA.",
       price: "90",
@@ -418,30 +352,12 @@ const WorldPlacesShowcase: React.FC = () => {
     },
     {
       img: "https://plus.unsplash.com/premium_photo-1710030733249-5d7c34509f61?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Uml2ZXJ8ZW58MHx8MHx8fDA%3D",
-      title: "LA River & Art District",
+      title: "Art Murals",
       location: "Los Angeles, USA",
       description: "Explore vibrant street art murals and the revitalized LA River area with local artists.",
       price: "65",
       type: "Art & Culture"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QmVhY2h8ZW58MHx8MHx8fDA%3D",
-      title: "Santa Monica Beach",
-      location: "Santa Monica, USA",
-      description: "Beautiful Pacific coastline with the famous Santa Monica Pier and pristine sandy beaches.",
-      price: "50",
-      type: "Beach Experience"
-    },
-    {
-      img: "https://plus.unsplash.com/premium_photo-1675670738535-479c28cdb50f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fEJvYXJkd2Fsa3xlbnwwfHwwfHx8MA%3D%3D",
-      title: "Venice Canals & Boardwalk",
-      location: "Venice, USA",
-      description: "Unique canal system and vibrant boardwalk featuring street performers and local vendors.",
-      price: "45",
-      type: "Waterfront District"
-    },
-   
-   
+    }
   ];
 
   const filteredPlaces: Place[] = worldPlaces.filter(

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import logo from "../assets/iconic.webp";
 import { motion, AnimatePresence } from "framer-motion";
-{/**import { DotLottieReact } from "@lottiefiles/dotlottie-react"; */}
+import { DotLottieReact } from "@lottiefiles/dotlottie-react"; 
 import { X, Clock, Star, Phone, Mail,  MapPin, Instagram, Facebook, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -14,7 +14,7 @@ import WhyChooseUsSection from "../Landing/WhyChooseUsSection";
 import TestimonialsSection from "../Landing/TestimonialsSection";
 import ContactSection from "../Landing/ContactSection";
 import About from '../Landing/AboutSection';
-import Notfound from '../Landing/404';
+{/**import Notfound from '../Landing/404'; */}
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -43,13 +43,13 @@ export default function Home() {
     };
   }, [isMobileMenuOpen]);
   const [showContent, setShowContent] = useState(false);
-  {/**useEffect(() => {
+  useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
     }, 8000); // 8 seconds
 
     return () => clearTimeout(timer); // cleanup on unmount
-  }, []); */}
+  }, []); 
 
 
   useEffect(() => {
@@ -72,17 +72,17 @@ export default function Home() {
 
   return (
     <>
-    {/** <div className="flex items-center justify-center min-h-screen w-full px-4">
+    {/** <Notfound /> */}
+      {!showContent ? (
+       <div className="flex items-center justify-center min-h-screen w-full px-4">
           <DotLottieReact
             src="https://lottie.host/b152639c-6d77-4eca-81f0-1211408e5777/2fN6vtwn3k.lottie"
             loop
             autoplay
             style={{ maxWidth: "100%", height: "auto" }}
           />
-        </div> */}
-      {!showContent ? (
-      
-        <Notfound />
+        </div>
+        
       ) : (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
           {/* Navigation */}
