@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import logo from "../assets/iconic.webp";
 import { Star, Menu, X, Phone, Mail, MapPin, Instagram, Facebook, Twitter, Clock } from "lucide-react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react"; 

@@ -19,7 +19,6 @@ interface Place {
 }
 
 interface PlaceCardProps extends Place {
-  index: number;
   handleOrderPopup: () => void;
   handleBookNow: (place: Place) => void;
 }
@@ -36,22 +35,6 @@ interface BookingConfirmationProps {
   bookedPlace: Place | null;
 }
 
-// Loading Skeleton Component
-const CardSkeleton: React.FC = () => (
-  <div className="animate-pulse bg-gray-200 rounded-xl overflow-hidden h-full">
-    <div className="h-[260px] bg-gray-300"></div>
-    <div className="p-5 space-y-3">
-      <div className="h-6 bg-gray-300 rounded mb-2"></div>
-      <div className="h-4 bg-gray-300 rounded mb-2"></div>
-      <div className="h-4 bg-gray-300 rounded w-3/4"></div>
-      <div className="flex justify-between pt-3">
-        <div className="h-4 bg-gray-300 rounded w-20"></div>
-        <div className="h-4 bg-gray-300 rounded w-24"></div>
-      </div>
-      <div className="h-10 bg-gray-300 rounded"></div>
-    </div>
-  </div>
-);
 
 // PlaceCard Component
 const PlaceCard: React.FC<PlaceCardProps> = memo(({
@@ -61,10 +44,8 @@ const PlaceCard: React.FC<PlaceCardProps> = memo(({
   description,
   type,
   handleOrderPopup,
-  index,
 }) => {
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
-  const [imageLoaded, setImageLoaded] = useState<boolean>(true); // Start as loaded for local images
   const [imageError, setImageError] = useState<boolean>(false);
 
   const handleFavoriteClick = useCallback((e: React.MouseEvent) => {
@@ -72,13 +53,8 @@ const PlaceCard: React.FC<PlaceCardProps> = memo(({
     setIsFavorite(!isFavorite);
   }, [isFavorite]);
 
-  const handleImageLoad = useCallback(() => {
-    setImageLoaded(true);
-  }, []);
-
   const handleImageError = useCallback(() => {
     setImageError(true);
-    setImageLoaded(true);
   }, []);
 
   return (
@@ -92,7 +68,6 @@ const PlaceCard: React.FC<PlaceCardProps> = memo(({
           alt={title}
           loading="lazy"
           className="w-full h-[260px] object-cover transition-transform duration-200 group-hover:scale-105"
-          onLoad={handleImageLoad}
           onError={handleImageError}
         />
 
@@ -405,7 +380,6 @@ const WorldPlacesShowcase: React.FC = memo(() => {
             <PlaceCard
               key={`${place.title}-${index}`}
               {...place}
-              index={index}
               handleOrderPopup={() => handleOrderPopup(place)}
               handleBookNow={handleBookNow}
             />
