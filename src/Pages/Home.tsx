@@ -132,10 +132,10 @@ export default function Home() {
             </div>
 
         {/* Mobile Menu */}
-              {isMobileMenuOpen && (
+        {isMobileMenuOpen && (
           <div className="lg:hidden">
             <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={handleLinkClick} />
-            <div className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-gradient-to-br from-gray-900 to-black shadow-2xl z-50">
+            <div className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-black shadow-2xl z-50">
                     <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-6 border-b border-gray-700">
                         <div className="flex items-center space-x-3">
