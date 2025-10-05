@@ -25,7 +25,7 @@ export default function ExperienceSection() {
       number: "2000+",
       label: "Expert Guides",
       description:
-        "Passionate travel experts and local guides ensuring authentic adventures.",
+        "Passionate travel experts, local guides ensuring authentic adventures.",
       startColor: "#f5092d",
       endColor: "#f5092d",
     },
