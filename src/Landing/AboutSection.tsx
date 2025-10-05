@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle, Award, Shield, Clock, Users, MapPin, Star } from "lucide-react";
-
+import x from '../assets/xp.jpg'
 export default function AboutSection() {
   const features = [
     {
@@ -128,7 +128,7 @@ export default function AboutSection() {
               }}
             >
               <img
-                src="https://plus.unsplash.com/premium_photo-1697730143625-cc36da7bc150?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8TG9zJTIwQW5nZWxlc3xlbnwwfHwwfHx8MA%3D%3D"
+                src={x}
                 alt="Los Angeles cityscape with Hollywood sign and palm trees"
                 className="w-full h-64 sm:h-80 lg:h-[500px] xl:h-[600px] object-cover"
               />

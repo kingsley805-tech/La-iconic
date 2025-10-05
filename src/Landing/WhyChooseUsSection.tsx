@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Users, Globe2 } from "lucide-react";
-
+import xx from '../assets/xx.jpg'
 export default function WhyChooseUsSection() {
   const pillars = [
     {
@@ -71,7 +71,7 @@ export default function WhyChooseUsSection() {
               }}
             >
               <img
-                src="https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dG91cnxlbnwwfHwwfHx8MA%3D%3D"
+                src={xx}
                 alt="Travel team collaboration"
                 className="w-full h-full object-cover"
               />

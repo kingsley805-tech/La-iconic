@@ -1,14 +1,14 @@
-import React, { useState} from "react";
+import React, { useState, memo, useCallback } from "react";
 import { IoLocationSharp, IoClose, IoHeart, IoHeartOutline } from "react-icons/io5";
-import { motion } from "framer-motion";
-import china from "../assets/Chinese .jpg"
-import santa from "../assets/santa monica.jpg"
-import dolby from "../assets/dolby.jpg"
-import walk from '../assets/walk.jpg'
-import bev from '../assets/bev.jpg'
 
+// Import local images
+import china from "../assets/Chinese .jpg";
+import santa from "../assets/santa monica.jpg";
+import dolby from "../assets/dolby.jpg";
+import walk from '../assets/walk.jpg';
+import bev from '../assets/bev.jpg';
 
-// Define interfaces for type safety
+// Define interfaces
 interface Place {
   img: string;
   title: string;
@@ -36,65 +36,70 @@ interface BookingConfirmationProps {
   bookedPlace: Place | null;
 }
 
-// Initialize AOS-like animation system
+// Loading Skeleton Component
+const CardSkeleton: React.FC = () => (
+  <div className="animate-pulse bg-gray-200 rounded-xl overflow-hidden h-full">
+    <div className="h-[260px] bg-gray-300"></div>
+    <div className="p-5 space-y-3">
+      <div className="h-6 bg-gray-300 rounded mb-2"></div>
+      <div className="h-4 bg-gray-300 rounded mb-2"></div>
+      <div className="h-4 bg-gray-300 rounded w-3/4"></div>
+      <div className="flex justify-between pt-3">
+        <div className="h-4 bg-gray-300 rounded w-20"></div>
+        <div className="h-4 bg-gray-300 rounded w-24"></div>
+      </div>
+      <div className="h-10 bg-gray-300 rounded"></div>
+    </div>
+  </div>
+);
 
 // PlaceCard Component
-const PlaceCard: React.FC<PlaceCardProps> = ({
+const PlaceCard: React.FC<PlaceCardProps> = memo(({
   img,
   title,
   location,
   description,
-  
   type,
   handleOrderPopup,
   index,
 }) => {
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
+  const [imageLoaded, setImageLoaded] = useState<boolean>(true); // Start as loaded for local images
+  const [imageError, setImageError] = useState<boolean>(false);
+
+  const handleFavoriteClick = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsFavorite(!isFavorite);
+  }, [isFavorite]);
+
+  const handleImageLoad = useCallback(() => {
+    setImageLoaded(true);
+  }, []);
+
+  const handleImageError = useCallback(() => {
+    setImageError(true);
+    setImageLoaded(true);
+  }, []);
 
   return (
-     <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      whileHover={{
-        y: -8,
-        scale: 1.02,
-        transition: { type: "spring", stiffness: 300 },
-      }}
-      className="shadow-lg transition-all duration-500 hover:shadow-2xl cursor-pointer rounded-xl overflow-hidden group relative flex flex-col h-full"
-      style={{
-        background:
-          "linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%)",
-        border: "1px solid rgba(254, 254, 2, 0.15)",
-      }}
+    <div
+      className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-200 cursor-pointer group"
     >
-      {/* Subtle accent overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#f5092d]/5 via-transparent to-transparent pointer-events-none" />
-
-      {/* Decorative corner accent */}
-      <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-[#f5092d]/20 to-transparent rounded-br-full" />
-
       {/* Image */}
       <div className="relative overflow-hidden">
         <img
-          src={img}
+          src={imageError ? "https://images.unsplash.com/photo-1507525428034-b723cf961d3e" : img}
           alt={title}
           loading="lazy"
-          className="mx-auto h-[260px] w-full object-cover transition duration-700 group-hover:scale-110"
-          onError={(e) => {
-            e.currentTarget.src =
-              "https://images.unsplash.com/photo-1507525428034-b723cf961d3e";
-          }}
+          className="w-full h-[260px] object-cover transition-transform duration-200 group-hover:scale-105"
+          onLoad={handleImageLoad}
+          onError={handleImageError}
         />
 
         {/* Favorite Button */}
         <button
-          onClick={(e) => {
-            e.stopPropagation();
-            setIsFavorite(!isFavorite);
-          }}
-          className="absolute top-3 right-3 p-2 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white transition-all transform hover:scale-110 shadow-md border border-gray-200/50"
+          onClick={handleFavoriteClick}
+          className="absolute top-3 right-3 p-2 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white transition-colors duration-200 shadow-md"
         >
           {isFavorite ? (
             <IoHeart className="text-[#f5092d] text-xl" />
@@ -104,45 +109,49 @@ const PlaceCard: React.FC<PlaceCardProps> = ({
         </button>
 
         {/* Type Label */}
-        <div className="absolute bottom-3 left-3 bg-black/80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium border border-white/20">
+        <div className="absolute bottom-3 left-3 bg-black/80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
           {type}
         </div>
       </div>
 
       {/* Card Content */}
-      <div className="flex flex-col justify-between flex-1 p-5 space-y-3 relative">
+      <div className="p-5 space-y-3">
         {/* Title + Info */}
         <div onClick={handleOrderPopup} className="cursor-pointer">
-          <h1 className="line-clamp-1 font-bold text-xl text-black">
+          <h1 className="font-bold text-xl text-black mb-2 line-clamp-1">
             {title}
           </h1>
-          <div className="flex items-center gap-2 opacity-80 mt-1">
-            <IoLocationSharp className="text-red-500" />
-            <span className="text-gray-700">{location}</span>
+          <div className="flex items-center gap-2 text-gray-600 mb-2">
+            <IoLocationSharp className="text-[#f5092d]" />
+            <span className="text-sm">{location}</span>
           </div>
-          <p className="line-clamp-2 text-gray-600 text-sm mt-2">
+          <p className="text-gray-600 text-sm line-clamp-2">
             {description}
           </p>
         </div>
 
         {/* Price Section */}
-        <div className="flex items-center justify-between border-t border-gray-200/60 pt-3 mt-auto">
+        <div className="flex items-center justify-between border-t border-gray-200 pt-3">
           <p className="text-sm text-gray-600">Starting from</p>
-          <p className="text-sm flex flex-col font-bold text-black drop-shadow-sm">
-            <span>Adults:1 x $60.00</span>
-<span>Children:1 x $45.00</span>
+          <p className="text-sm font-bold text-black">
+            <span>Adults: 1 x $60.00</span><br />
+            <span>Children: 1 x $45.00</span>
           </p>
         </div>
 
         {/* Book Now Button */}
-        <button className=" bg-gradient-to-r w-24  text-white from-[#f5092d] to-[#f5092d] hover:from-black hover:to-[#f5092d]  py-1 rounded-lg font-semibold transition-all duration-300 transform hover:scale-[1.03] hover:shadow-lg border border-[#f5092d]/30">
-          
-          <a href="https://widgets.bokun.io/online-sales/2c4ad054-cded-4501-8eea-8863cf22683c/experience/1076736">Book Now</a>
-        </button>
+        <a
+          href="https://widgets.bokun.io/online-sales/2c4ad054-cded-4501-8eea-8863cf22683c/experience/1076736"
+          className="block w-44 bg-[#f5092d] hover:bg-[#e00826] text-white py-2 rounded-lg font-semibold transition-colors duration-200 text-center"
+        >
+          Book Now
+        </a>
       </div>
-    </motion.div>
+    </div>
   );
-};
+});
+
+PlaceCard.displayName = 'PlaceCard';
 
 // OrderPopup Component
 const OrderPopup: React.FC<OrderPopupProps> = ({ orderPopup, setOrderPopup, selectedPlace }) => {
@@ -151,15 +160,15 @@ const OrderPopup: React.FC<OrderPopupProps> = ({ orderPopup, setOrderPopup, sele
   return (
     <div
       className={`${
-        orderPopup ? "scale-100 opacity-100" : "scale-0 opacity-0"
-      } fixed inset-0 z-50 flex items-center justify-center bg-black/50 transition-all duration-300`}
+        orderPopup ? "opacity-100 visible" : "opacity-0 invisible"
+      } fixed inset-0 z-50 flex items-center justify-center bg-black/50 transition-all duration-200`}
     >
-      <div className="bg-white dark:bg-slate-900 p-6 rounded-lg shadow-xl max-w-md w-full mx-4 transform transition-all duration-300">
+      <div className="bg-white p-6 rounded-lg shadow-xl max-w-md w-full mx-4 transform transition-all duration-200">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold">{selectedPlace.title}</h2>
           <button
             onClick={() => setOrderPopup(false)}
-            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+            className="text-gray-500 hover:text-gray-700 transition-colors"
           >
             <IoClose className="text-2xl" />
           </button>
@@ -167,28 +176,27 @@ const OrderPopup: React.FC<OrderPopupProps> = ({ orderPopup, setOrderPopup, sele
         <img
           src={selectedPlace.img}
           alt={selectedPlace.title}
-          loading="lazy"
           className="w-full h-48 object-cover rounded-lg mb-4"
           onError={(e) => {
-            e.currentTarget.src = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e"; // Fallback image
+            e.currentTarget.src = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e";
           }}
         />
         <div className="space-y-3">
-          <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+          <div className="flex items-center gap-2 text-gray-600">
             <IoLocationSharp className="text-[#f5092d]" />
             <span>{selectedPlace.location}</span>
           </div>
-          <p className="text-gray-700 dark:text-gray-300">{selectedPlace.description}</p>
+          <p className="text-gray-700">{selectedPlace.description}</p>
           <div className="flex justify-between items-center pt-4 border-t">
             <span className="text-sm text-gray-500">{selectedPlace.type}</span>
             <span className="text-2xl font-bold text-[#f5092d]">${selectedPlace.price}</span>
           </div>
-          <button
-            onClick={() => setOrderPopup(false)}
-            className="w-full bg-gradient-to-r from-[#f5092d] to-[#f5092d] hover:from-[#f5092d] hover:to-[#f5092d] text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+          <a
+            href="https://widgets.bokun.io/online-sales/2c4ad054-cded-4501-8eea-8863cf22683c/experience/1076736"
+            className="block w-full bg-[#f5092d] hover:bg-[#e00826] text-white py-3 rounded-lg font-semibold transition-colors duration-200 text-center"
           >
             Book This Destination
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -206,28 +214,28 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({
   return (
     <div
       className={`${
-        showBooking ? "scale-100 opacity-100" : "scale-0 opacity-0"
-      } fixed inset-0 z-50 flex items-center justify-center bg-black/50 transition-all duration-300`}
+        showBooking ? "opacity-100 visible" : "opacity-0 invisible"
+      } fixed inset-0 z-50 flex items-center justify-center bg-black/50 transition-all duration-200`}
     >
-      <div className="bg-white dark:bg-slate-900 p-8 rounded-lg shadow-xl max-w-lg w-full mx-4 transform transition-all duration-300">
+      <div className="bg-white p-8 rounded-lg shadow-xl max-w-lg w-full mx-4 transform transition-all duration-200">
         <div className="text-center">
-          <div className="w-16 h-16 bg-green-100 dark:bg-[#f5092d] rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-[#f5092d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">Booking Confirmed!</h2>
-          <p className="text-gray-600 dark:text-gray-300 mb-6">
+          <h2 className="text-2xl font-bold text-gray-800 mb-2">Booking Confirmed!</h2>
+          <p className="text-gray-600 mb-6">
             Your trip to <span className="font-semibold text-[#f5092d]">{bookedPlace.title}</span> has been booked
             successfully.
           </p>
 
-          <div className="bg-gray-50 dark:bg-slate-800 p-4 rounded-lg mb-6 text-left">
+          <div className="bg-gray-50 p-4 rounded-lg mb-6 text-left">
             <div className="flex items-center gap-2 mb-2">
-              <IoLocationSharp className="text-red-500" />
+              <IoLocationSharp className="text-[#f5092d]" />
               <span className="font-semibold">{bookedPlace.location}</span>
             </div>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{bookedPlace.description}</p>
+            <p className="text-sm text-gray-600 mb-2">{bookedPlace.description}</p>
             <div className="flex justify-between items-center">
               <span className="text-sm text-gray-500">{bookedPlace.type}</span>
               <span className="text-xl font-bold text-green-600">${bookedPlace.price}</span>
@@ -237,7 +245,7 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({
           <div className="space-y-3">
             <button
               onClick={() => setShowBooking(false)}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors duration-200"
             >
               Continue Exploring
             </button>
@@ -250,25 +258,27 @@ const BookingConfirmation: React.FC<BookingConfirmationProps> = ({
 };
 
 // WorldPlacesShowcase Component
-const WorldPlacesShowcase: React.FC = () => {
+const WorldPlacesShowcase: React.FC = memo(() => {
   const [orderPopup, setOrderPopup] = useState<boolean>(false);
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
   const [showBooking, setShowBooking] = useState<boolean>(false);
   const [bookedPlace, setBookedPlace] = useState<Place | null>(null);
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-
-  const handleOrderPopup = (place: Place): void => {
+  const handleOrderPopup = useCallback((place: Place): void => {
     setSelectedPlace(place);
     setOrderPopup(true);
-  };
+  }, []);
 
-  const handleBookNow = (place: Place): void => {
+  const handleBookNow = useCallback((place: Place): void => {
     setBookedPlace(place);
     setShowBooking(true);
-  };
+  }, []);
 
- 
+  const handleSearchChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  }, []);
+
   const worldPlaces: Place[] = [
     {
       img: walk,
@@ -360,114 +370,55 @@ const WorldPlacesShowcase: React.FC = () => {
     }
   ];
 
-  const filteredPlaces: Place[] = worldPlaces.filter(
-    (place) =>
-      place.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      place.location.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredPlaces: Place[] = React.useMemo(() => 
+    worldPlaces.filter(
+      (place) =>
+        place.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        place.location.toLowerCase().includes(searchTerm.toLowerCase())
+    ), [searchTerm]
   );
 
   return (
-    <>
-      <style>
-        {`
-          [data-aos] {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-          }
-          
-          [data-aos].aos-animate {
-            opacity: 1;
-            transform: translateY(0);
-          }
-          
-          [data-aos="fade-up"] {
-            transform: translateY(50px);
-          }
-          
-          [data-aos="fade-down"] {
-            transform: translateY(-50px);
-          }
-          
-          [data-aos="fade-left"] {
-            transform: translateX(50px);
-          }
-          
-          [data-aos="fade-right"] {
-            transform: translateX(-50px);
-          }
-          
-          [data-aos="zoom-in"] {
-            transform: scale(0.8);
-          }
-          
-          [data-aos].aos-animate[data-aos="fade-up"],
-          [data-aos].aos-animate[data-aos="fade-down"],
-          [data-aos].aos-animate[data-aos="fade-left"],
-          [data-aos].aos-animate[data-aos="fade-right"] {
-            transform: translate(0, 0);
-          }
-          
-          [data-aos].aos-animate[data-aos="zoom-in"] {
-            transform: scale(1);
-          }
-        `}
-      </style>
-
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
-        <div className="container mx-auto px-4">
-        
-
-          <div className="mb-12 flex my-20 flex-col md:flex-row items-center justify-center gap-4 md:gap-8 px-4" data-aos="fade-up">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white">Our Packages</h2>
-            <span className="hidden md:block h-6 w-px bg-gray-300 dark:bg-gray-600"></span>
-            <p className="text-lg text-gray-500 dark:text-gray-400">Search Your Destination</p>
-            <div className="relative w-full max-w-md">
-              <span className="absolute inset-y-0 left-3 flex items-center text-gray-400 dark:text-gray-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1010.5 18.5a7.5 7.5 0 006.15-1.85z"
-                  />
-                </svg>
-              </span>
-              <input
-                type="text"
-                placeholder="Search destination..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 dark:bg-slate-800 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f5092d] focus:border-[#f5092d] shadow-sm hover:shadow-md transition-all duration-300"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}
-              />
-            </div>
+    <div className="min-h-screen bg-gray-50 py-8">
+      <div className="container mx-auto px-4">
+        <div className="mb-12 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 px-4 my-20">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800">Our Packages</h2>
+          <span className="hidden md:block h-6 w-px bg-gray-300"></span>
+          <p className="text-lg text-gray-500">Search Your Destination</p>
+          <div className="relative w-full max-w-md">
+            <span className="absolute inset-y-0 left-3 flex items-center text-gray-400">
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1010.5 18.5a7.5 7.5 0 006.15-1.85z" />
+              </svg>
+            </span>
+            <input
+              type="text"
+              placeholder="Search destination..."
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f5092d] focus:border-[#f5092d] shadow-sm transition-all duration-200"
+              onChange={handleSearchChange}
+            />
           </div>
-
-          <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
-            {filteredPlaces.slice().map((place, index) => (
-              <PlaceCard
-                key={`${place.title}-${index}`}
-                {...place}
-                index={index}
-                handleOrderPopup={() => handleOrderPopup(place)}
-                handleBookNow={handleBookNow}
-              />
-            ))}
-          </div>
-
-         
         </div>
 
-        <OrderPopup orderPopup={orderPopup} setOrderPopup={setOrderPopup} selectedPlace={selectedPlace} />
-        <BookingConfirmation showBooking={showBooking} setShowBooking={setShowBooking} bookedPlace={bookedPlace} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+          {filteredPlaces.map((place, index) => (
+            <PlaceCard
+              key={`${place.title}-${index}`}
+              {...place}
+              index={index}
+              handleOrderPopup={() => handleOrderPopup(place)}
+              handleBookNow={handleBookNow}
+            />
+          ))}
+        </div>
       </div>
-    </>
+
+      <OrderPopup orderPopup={orderPopup} setOrderPopup={setOrderPopup} selectedPlace={selectedPlace} />
+      <BookingConfirmation showBooking={showBooking} setShowBooking={setShowBooking} bookedPlace={bookedPlace} />
+    </div>
   );
-};
+});
+
+WorldPlacesShowcase.displayName = 'WorldPlacesShowcase';
 
 export default WorldPlacesShowcase;
