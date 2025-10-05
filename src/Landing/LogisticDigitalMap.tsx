@@ -11,7 +11,7 @@ interface Destination {
   status: 'open' | 'crowded' | 'restricted';
 }
 
-interface TravelRoute {
+interface TourRoute {
   id: string;
   from: { x: number; y: number };
   to: { x: number; y: number };
@@ -73,7 +73,7 @@ const TourismWorldMap: React.FC = () => {
   { id: '10', name: 'Catalina Island Day Trip', x: 26, y: 42, visitors: '1M', country: 'USA', status: 'open' },
 ];
 
-const routes: TravelRoute[] = [
+const routes: TourRoute[] = [
   { id: '1', from: { x: 20, y: 35 }, to: { x: 22, y: 32 }, name: 'Hollywood Griffith Park', volume: '2M visitors/year' },
   { id: '2', from: { x: 18, y: 38 }, to: { x: 19, y: 40 }, name: 'Santa Monica Venice Boardwalk', volume: '5M visitors/year' },
   { id: '3', from: { x: 21, y: 34 }, to: { x: 16, y: 36 }, name: 'Beverly Hills Malibu Coast', volume: '1.2M visitors/year' },
@@ -125,7 +125,7 @@ const alerts: Alert[] = [
   };
 
   // Calculate route styles
-  const getRouteStyle = (route: TravelRoute) => {
+  const getRouteStyle = (route: TourRoute) => {
     const deltaX = route.to.x - route.from.x;
     const deltaY = route.to.y - route.from.y;
     const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
@@ -173,7 +173,7 @@ const alerts: Alert[] = [
           <div className="w-full h-full relative bg-gradient-to-r from-yellow-50 to-yellow-100">
             {/* Tourism Layer */}
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-              {/* Travel Routes */}
+              {/* Tour Routes */}
               {routes.map((route, index) => (
                 <div
                   key={route.id}

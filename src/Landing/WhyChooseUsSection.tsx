@@ -5,15 +5,15 @@ export default function WhyChooseUsSection() {
   const pillars = [
     {
       icon: MapPin,
-      title: "Smart Travel Solutions",
+      title: "Smart Tour Solutions",
       description:
-        "Our innovative platform delivers real-time itinerary updates, personalized travel suggestions, and seamless trip management.",
+        "Our innovative platform delivers real-time itinerary updates, personalized tour suggestions, and seamless trip management.",
     },
     {
       icon: Users,
-      title: "Expert Travel Advisors",
+      title: "Expert Tour Advisors",
       description:
-        "Our dedicated team of travel experts designs customized journeys and shares local insights for memorable adventures.",
+        "Our dedicated team of tour experts designs customized journeys and shares local insights for memorable adventures.",
     },
     {
       icon: Globe2,
@@ -46,9 +46,9 @@ export default function WhyChooseUsSection() {
               </span>
             </h2>
             <p className="text-xl text-black leading-relaxed">
-              We're more than a travel agency; we're your partners in creating
+              We're more than a tour agency; we're your partners in creating
               unforgettable journeys. Discover the essence of our commitment to
-              your travel dreams.
+              your tour dreams.
             </p>
           </div>
         </motion.div>

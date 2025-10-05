@@ -304,7 +304,7 @@ export default function Home() {
                   <MapPin className="w-5 h-5 text-[#f5092d] mt-0.5" />
                 <div>
                     <p className="text-gray-400 text-xs uppercase tracking-wide">Address</p>
-                  <p className="text-white text-sm">9850 W Olympic Blvd<br />Beverly Hills, CA</p>
+                  <p className="text-white text-sm">9850 W Olympic Blvd<br />Beverly Hills, CA<br />Pickup center: 471 S Roxbury Dr, Beverly Hills, CA 90212</p>
                 </div>
               </div>
             </div>

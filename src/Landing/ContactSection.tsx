@@ -85,7 +85,7 @@ export default function ContactSection() {
             </span>
           </p>
           <p className="text-sm md:text-lg text-neutral-500 max-w-2xl mx-auto py-4">
-            Break free from traditional boundaries. Work from anywhere, at the comfort of your own studio apartment. Perfect for Nomads and Travellers.
+            Break free from traditional boundaries. Work from anywhere, at the comfort of your own studio apartment. Perfect for Nomads and Tourists.
           </p>
           <WorldMap
             dots={[

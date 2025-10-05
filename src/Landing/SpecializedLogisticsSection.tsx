@@ -9,7 +9,7 @@ export default function SpecializedToursSection() {
         { 
           icon: MapPin, 
           title: "Beverly Hills Tour Hub", 
-          description: "Launch your LA adventure from our hub at 9850 W Olympic Blvd, Beverly Hills, CA 90211, USA, with curated city tours and premium experiences.", 
+          description: "Launch your LA adventure from our hub at 9850 W Olympic Blvd, Beverly Hills, CA 90211, USA. Pickup center: 471 S Roxbury Dr, Beverly Hills, CA 90212. Curated city tours and premium experiences.", 
           price: ""
         },
         { 

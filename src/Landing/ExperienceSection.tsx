@@ -16,7 +16,7 @@ export default function ExperienceSection() {
       number: "25+",
       label: "Years of Exploration",
       description:
-        "Over two decades of crafting unforgettable travel experiences worldwide.",
+        "Over two decades of crafting unforgettable tour experiences worldwide.",
       startColor: "#f5092d",
       endColor: "#f5092d",
     },
@@ -25,14 +25,14 @@ export default function ExperienceSection() {
       number: "2000+",
       label: "Expert Guides",
       description:
-        "Passionate travel experts, local guides ensuring authentic adventures.",
+        "Passionate tour experts, local guides ensuring authentic adventures.",
       startColor: "#f5092d",
       endColor: "#f5092d",
     },
     {
       icon: TrendingUp,
       number: "500K+",
-      label: "Happy Travelers",
+      label: "Happy Tourists",
       description:
         "Half a million explorers have trusted us for their dream vacations.",
       startColor: "#f5092d",
@@ -51,13 +51,13 @@ export default function ExperienceSection() {
 
 
   const certifications = [
-    { name: "ASTA Certified", description: "American Society of Travel Advisors" },
+    { name: "ASTA Certified", description: "American Society of Tour Advisors" },
     { name: "IATA Accredited", description: "International Air Transport Association" },
     { name: "GSTC Member", description: "Global Sustainable Tourism Council" },
     {
       name: "Beverly Hills Tour Hub",
       description:
-        "Launch your LA adventure with exclusive tours starting from our hub at 9850 W Olympic Blvd, Beverly Hills, CA 90211, USA.",
+        "Launch your LA adventure with exclusive tours starting from our hub at 9850 W Olympic Blvd, Beverly Hills, CA 90211, USA. Pickup center: 471 S Roxbury Dr, Beverly Hills, CA 90212",
     },
   ];
 
@@ -79,13 +79,13 @@ export default function ExperienceSection() {
             <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight">
               <span>Two Decades of </span>
               <span className="block bg-gradient-to-r from-[#f5092d] to-[#f5092d] bg-clip-text text-transparent">
-                Travel Excellence
+                Tour Excellence
               </span>
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              From our roots in Ghana to adventures across the globe, our journey
+              From our roots in United States of America to adventures across the globe, our journey
               is defined by passion, discovery, and a commitment to creating
-              unforgettable travel memories.
+              unforgettable tour experiences.
             </p>
           </div>
         </motion.div>

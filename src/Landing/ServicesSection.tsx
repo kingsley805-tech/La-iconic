@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Star, Camera,  CheckCircle } from "lucide-react";
 import Card from './PlaceCard'
+import ho from '../assets/ho.jpg'
+import bee from '../assets/bee.jpg'
 
 export default function ToursSection() {
   const tours = [
@@ -8,7 +10,7 @@ export default function ToursSection() {
       icon: Star,
       title: "Hollywood & Beyond Tour",
       description: "Discover the glitz and glamour of Los Angeles with our iconic 1:30 hour tour departing hourly.",
-      image: "https://images.unsplash.com/photo-1569949380643-6e746ecaa3bd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fFRvdXJ8ZW58MHx8MHx8fDA%3D",
+      image: ho,
       features: [
         "Hollywood Walk of Fame",
         "TCL Chinese Theatre & Dolby Theatre",
@@ -20,7 +22,7 @@ export default function ToursSection() {
       icon: Camera,
       title: "Beverly Hills & Coastal Highlights",
       description: "Experience LA luxury and scenic beauty on this 1:30 hour tour departing hourly.",
-      image: "https://images.unsplash.com/photo-1609716969697-a9711e718023?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fENvYXN0YWwlMjBIaWdobGlnaHRzfGVufDB8fDB8fHww",
+      image: bee,
       features: [
         "Griffith Park & Hollywood Sign Views",
         "Beverly Hills Gardens & Streets",
