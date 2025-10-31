@@ -1,18 +1,18 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, lazy, Suspense } from "react";
 import logo from "../assets/iconic.webp";
 import { Star, Menu, X, Phone, Mail, MapPin, Instagram, Facebook, Twitter, Clock } from "lucide-react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react"; 
 
-// Import optimized sections
-import HeroSection from "../Landing/HeroSection";
-import ServicesSection from "../Landing/ServicesSection";
-import ExperienceSection from "../Landing/ExperienceSection";
-import SpecializedLogisticsSection from "../Landing/SpecializedLogisticsSection";
-import GlobalNetworkSection from "../Landing/GlobalNetworkSection";
-import WhyChooseUsSection from "../Landing/WhyChooseUsSection";
-import TestimonialsSection from "../Landing/TestimonialsSection";
-import ContactSection from "../Landing/ContactSection";
-import About from '../Landing/AboutSection';
+// Lazy-load heavy sections to split bundles
+const HeroSection = lazy(() => import("../Landing/HeroSection"));
+const ServicesSection = lazy(() => import("../Landing/ServicesSection"));
+const ExperienceSection = lazy(() => import("../Landing/ExperienceSection"));
+const SpecializedLogisticsSection = lazy(() => import("../Landing/SpecializedLogisticsSection"));
+const GlobalNetworkSection = lazy(() => import("../Landing/GlobalNetworkSection"));
+const WhyChooseUsSection = lazy(() => import("../Landing/WhyChooseUsSection"));
+const TestimonialsSection = lazy(() => import("../Landing/TestimonialsSection"));
+const ContactSection = lazy(() => import("../Landing/ContactSection"));
+const About = lazy(() => import('../Landing/AboutSection'));
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -177,18 +177,36 @@ export default function Home() {
               )}
       </nav>
 
-          {/* Main Content */}
+      {/* Main Content */}
       <main>
-            <HeroSection />
-            <ServicesSection />
-            <ExperienceSection />
-            <SpecializedLogisticsSection />
-            <GlobalNetworkSection />
-            <About />
-            <WhyChooseUsSection />
-            <TestimonialsSection />
-            <ContactSection />
-          </main>
+        <Suspense fallback={null}>
+          <HeroSection />
+        </Suspense>
+        <Suspense fallback={null}>
+          <ServicesSection />
+        </Suspense>
+        <Suspense fallback={null}>
+          <ExperienceSection />
+        </Suspense>
+        <Suspense fallback={null}>
+          <SpecializedLogisticsSection />
+        </Suspense>
+        <Suspense fallback={null}>
+          <GlobalNetworkSection />
+        </Suspense>
+        <Suspense fallback={null}>
+          <About />
+        </Suspense>
+        <Suspense fallback={null}>
+          <WhyChooseUsSection />
+        </Suspense>
+        <Suspense fallback={null}>
+          <TestimonialsSection />
+        </Suspense>
+        <Suspense fallback={null}>
+          <ContactSection />
+        </Suspense>
+      </main>
 
           {/* Footer */}
       <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
