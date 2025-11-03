@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, lazy, Suspense } from "react";
 import logo from "../assets/iconic.webp";
 import { Star, Menu, X, Phone, Mail, MapPin, Instagram, Facebook, Twitter, Clock } from "lucide-react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react"; 
+import { SEO } from "../components/SEO";
 
 // Lazy-load heavy sections to split bundles
 const HeroSection = lazy(() => import("../Landing/HeroSection"));
@@ -80,6 +81,11 @@ export default function Home() {
         
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+      <SEO
+        title="LA Iconic Tours — Unforgettable Los Angeles Experiences"
+        description="Discover Hollywood, Santa Monica, and hidden LA gems with premium guided tours."
+        pathname="/"
+      />
           {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-gradient-to-br from-gray-900/95 via-gray-800/95 to-black/95">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
