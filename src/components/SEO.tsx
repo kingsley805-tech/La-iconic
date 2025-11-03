@@ -1,5 +1,4 @@
-import { ReactNode, useMemo } from "react";
-import { Helmet } from "react-helmet-async";
+import { type ReactNode, useEffect, useMemo } from "react";
 import { useSiteMetadata } from "../hooks/useSiteMetadata";
 
 type SEOProps = {
@@ -24,36 +23,48 @@ export function SEO({ title, description, pathname, children }: SEOProps) {
     [title, description, pathname, defaultTitle, defaultDescription, image, siteUrl, twitterUsername]
   );
 
-  return (
-    <Helmet prioritizeSeoTags>
-      <title>{seo.title}</title>
-      <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
+  useEffect(() => {
+    if (typeof document === "undefined") return;
 
-      {/* Open Graph */}
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content={seo.title} />
-      <meta property="og:description" content={seo.description} />
-      <meta property="og:image" content={seo.image} />
-      <meta property="og:url" content={seo.url} />
+    document.title = seo.title;
 
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={seo.title} />
-      <meta name="twitter:url" content={seo.url} />
-      <meta name="twitter:description" content={seo.description} />
-      <meta name="twitter:image" content={seo.image} />
-      {seo.twitterUsername && <meta name="twitter:creator" content={seo.twitterUsername} />}
+    const setMeta = (selector: string, attr: "name" | "property", content: string) => {
+      let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}='${selector}']`);
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute(attr, selector);
+        document.head.appendChild(el);
+      }
+      el.setAttribute("content", content);
+    };
 
-      {/* Emoji favicon to mirror Gatsby example; replace with a file fav if desired */}
-      <link
-        rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>"
-      />
+    setMeta("description", "name", seo.description);
+    setMeta("image", "name", seo.image);
+    setMeta("og:type", "property", "website");
+    setMeta("og:title", "property", seo.title);
+    setMeta("og:description", "property", seo.description);
+    setMeta("og:image", "property", seo.image);
+    setMeta("og:url", "property", seo.url);
+    setMeta("twitter:card", "name", "summary_large_image");
+    setMeta("twitter:title", "name", seo.title);
+    setMeta("twitter:url", "name", seo.url);
+    setMeta("twitter:description", "name", seo.description);
+    setMeta("twitter:image", "name", seo.image);
+    if (seo.twitterUsername) setMeta("twitter:creator", "name", seo.twitterUsername);
 
-      {children}
-    </Helmet>
-  );
+    let linkIcon = document.head.querySelector<HTMLLinkElement>("link[rel='icon']");
+    if (!linkIcon) {
+      linkIcon = document.createElement("link");
+      linkIcon.setAttribute("rel", "icon");
+      document.head.appendChild(linkIcon);
+    }
+    linkIcon.setAttribute(
+      "href",
+      "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>"
+    );
+  }, [seo]);
+
+  return <>{children}</>;
 }
 
 
